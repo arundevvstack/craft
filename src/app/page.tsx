@@ -7,8 +7,6 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { AnimatedDiagram } from '@/components/ui/animated-diagram';
 
-const heroImage = PlaceHolderImages.find((img) => img.id === 'hero-background');
-
 const TechnologyCard = ({
   item,
   index,
@@ -127,25 +125,14 @@ export default function Home() {
   return (
     <div className="overflow-x-hidden">
       {/* Hero Section */}
-      <section className="relative h-screen flex items-center justify-center text-center text-white">
-        {heroImage && (
-          <Image
-            src={heroImage.imageUrl}
-            alt="Robotics background"
-            data-ai-hint={heroImage.imageHint}
-            fill
-            className="object-cover"
-            priority
-          />
-        )}
-        <div className="absolute inset-0 bg-black/60" />
+      <section className="py-20 md:py-32 flex items-center justify-center text-center">
         <div className="relative z-10 p-4 max-w-4xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h1 className="font-headline text-4xl md:text-6xl lg:text-7xl font-bold tracking-tighter leading-tight">
+            <h1 className="font-headline text-4xl md:text-6xl lg:text-7xl font-bold leading-tight">
               STATE OF THE ART ENGINEERING, AUTOMATION, INDUSTRIAL ROBOTICS
             </h1>
           </motion.div>
@@ -153,7 +140,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="mt-4 text-base md:text-xl max-w-2xl mx-auto text-gray-300"
+            className="mt-4 text-base md:text-xl max-w-2xl mx-auto text-muted-foreground"
           >
             Transition to industry 4.0 with Craftsmac Labs RDaaS. We Research, Design and Make machines to transform human workspace at the frontline and on the floor.
           </motion.p>
@@ -170,16 +157,6 @@ export default function Home() {
             </Button>
           </motion.div>
         </div>
-        <div className="absolute bottom-10 left-1/2 -translate-x-1/2">
-           <div className="w-6 h-10 border-2 border-gray-400 rounded-full flex justify-center p-1">
-              <motion.div 
-                className="w-1 h-2 bg-gray-400 rounded-full"
-                animate={{ y: [0, 12, 0] }}
-                transition={{ duration: 1.5, repeat: Infinity, repeatType: 'loop' }}
-              />
-           </div>
-        </div>
-        <div className="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-background to-transparent" />
       </section>
 
       {/* Technology Showcase Section */}
