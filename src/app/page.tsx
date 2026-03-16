@@ -126,7 +126,17 @@ export default function Home() {
   return (
     <div className="overflow-x-hidden">
       {/* Hero Section */}
-      <section className="py-20 md:py-32">
+      <section className="relative py-20 md:py-32 text-white">
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="https://drive.usercontent.google.com/download?id=1d89YdVtdagttBZzxjdFSqTSxehwGqGlU&export=view&authuser=0"
+            alt="Robotic arm background"
+            fill
+            className="object-cover"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-transparent" />
+        </div>
         <div className="container mx-auto px-4">
           <div className="relative z-10 max-w-4xl text-left">
             <motion.div
@@ -147,7 +157,7 @@ export default function Home() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="mt-4 text-base md:text-xl max-w-2xl text-muted-foreground"
+              className="mt-4 text-base md:text-xl max-w-2xl text-neutral-200"
             >
               Transition to industry 4.0 with Craftsmac Labs RDaaS. We Research, Design and Make machines to transform human workspace at the frontline and on the floor.
             </motion.p>
