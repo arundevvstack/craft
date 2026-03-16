@@ -38,7 +38,7 @@ export default function ConstructionRoboticsPage() {
       </section>
 
       {/* Masonry Robot Section */}
-      <section className="py-20 bg-background">
+      <section className="min-h-screen flex items-center bg-background">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
             <div className="order-2 md:order-1">
@@ -73,7 +73,7 @@ export default function ConstructionRoboticsPage() {
       </section>
       
       {/* Painting Robot Section */}
-      <section className="py-20 bg-card">
+      <section className="min-h-screen flex items-center bg-card">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
              <div>
