@@ -7,16 +7,17 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { AnimatedDiagram } from '@/components/ui/animated-diagram';
 
+const actuatorSection = {
+  id: 'actuators',
+  title: 'Advanced Actuators',
+  text: 'State-of-the-Art, high precision, lightweight, rugged actuators designed and developed by in-house capital.',
+  buttonText: 'Discover more about our product',
+  buttonLink: '/technologies/advanced-actuators',
+  image: PlaceHolderImages.find((img) => img.id === 'actuator-diagram'),
+  imagePosition: 'left',
+};
+
 const featureSections = [
-  {
-    id: 'actuators',
-    title: 'Advanced Actuators',
-    text: 'State-of-the-Art, high precision, lightweight, rugged actuators designed and developed by in-house capital.',
-    buttonText: 'Discover more about our product',
-    buttonLink: '/technologies/advanced-actuators',
-    image: PlaceHolderImages.find((img) => img.id === 'actuator-diagram'),
-    imagePosition: 'left',
-  },
   {
     id: 'construction',
     title: 'Construction Robotics',
@@ -130,6 +131,49 @@ export default function Home() {
                 aiHint="process diagram"
                 showContainer={false}
               />
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Actuators Section */}
+      <section className="bg-card min-h-screen flex items-center">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.7 }}
+              viewport={{ once: true, amount: 0.3 }}
+              className="flex justify-center"
+            >
+              {actuatorSection.image && (
+                <AnimatedDiagram
+                  src={actuatorSection.image.imageUrl}
+                  alt={`${actuatorSection.title} diagram`}
+                  aiHint={actuatorSection.image.imageHint}
+                  showContainer={false}
+                />
+              )}
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.7 }}
+              viewport={{ once: true, amount: 0.3 }}
+            >
+              <h2 className="font-headline text-3xl md:text-4xl font-bold mb-4">
+                {actuatorSection.title}
+              </h2>
+              <p className="text-lg text-muted-foreground mb-6">
+                {actuatorSection.text}
+              </p>
+              <Button variant="outline" asChild size="lg">
+                <Link href={actuatorSection.buttonLink}>
+                  {actuatorSection.buttonText}
+                  <ArrowRight className="ml-2" />
+                </Link>
+              </Button>
             </motion.div>
           </div>
         </div>
