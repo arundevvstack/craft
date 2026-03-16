@@ -95,12 +95,6 @@ export default function RdaasPage() {
                 state-of-the-art solutions in industrial robotics and automation
                 to transform your workspace.
               </p>
-              <p className="text-lg text-muted-foreground">
-                We can research, design and make any thing that has motion
-                and/or anything that can change the form of another thing.
-                Partner with us for new product development, automation of your
-                process and upgradation of your factory floor.
-              </p>
             </div>
             <div>
               <Image
@@ -143,9 +137,33 @@ export default function RdaasPage() {
           </div>
         </div>
       </section>
+      
+      {/* Core Competency Section */}
+      <section className="py-20 bg-card">
+        <div className="container mx-auto px-4">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+              <Image
+                src="https://drive.usercontent.google.com/download?id=1d4kOYTOfdRHGw4XjdfVadtymBFkM977T"
+                alt="Custom engineering solutions"
+                width={600}
+                height={450}
+                className="rounded-lg shadow-lg mx-auto"
+                data-ai-hint="engineering components collage"
+              />
+            </div>
+            <div>
+                <h2 className="text-3xl font-bold mb-4">From Motion to Innovation</h2>
+                <p className="text-lg text-muted-foreground">
+                    We can research, design and make any thing that has motion and/or anything that can change the form of another thing. Partner with us for new product development, automation of your process and upgradation of your factory floor.
+                </p>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Process Section */}
-      <section className="py-20 bg-card">
+      <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="text-4xl font-bold">Our Process</h2>
@@ -157,7 +175,7 @@ export default function RdaasPage() {
           </div>
           <div className="grid md:grid-cols-3 gap-8">
             {processSteps.map((step) => (
-              <Card key={step.title} className="text-center bg-background">
+              <Card key={step.title} className="text-center bg-card">
                 <CardHeader>
                   <div className="mx-auto bg-primary/10 text-primary p-4 rounded-full w-fit mb-4">
                     <step.icon className="h-10 w-10" />
