@@ -1,3 +1,58 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "hero-background",
+      "description": "Full width hero with robotics background video or image and parallax movement.",
+      "imageUrl": "https://picsum.photos/seed/craftsmac-hero/1920/1080",
+      "imageHint": "robotic arm"
+    },
+    {
+      "id": "showcase-rdaas",
+      "description": "Technology showcase card for RDaaS.",
+      "imageUrl": "https://picsum.photos/seed/showcase-rdaas/600/400",
+      "imageHint": "engineering blueprint"
+    },
+    {
+      "id": "showcase-actuators",
+      "description": "Technology showcase card for Advanced Actuators.",
+      "imageUrl": "https://picsum.photos/seed/showcase-actuators/600/400",
+      "imageHint": "robotic joint"
+    },
+    {
+      "id": "showcase-construction",
+      "description": "Technology showcase card for Construction Robotics.",
+      "imageUrl": "https://picsum.photos/seed/showcase-construction/600/400",
+      "imageHint": "construction robot"
+    },
+    {
+      "id": "showcase-factory",
+      "description": "Technology showcase card for Vehicle & Factory Robotics.",
+      "imageUrl": "https://picsum.photos/seed/showcase-factory/600/400",
+      "imageHint": "factory automation"
+    },
+    {
+      "id": "rdaas-diagram",
+      "description": "Animated engineering workflow diagram for RDaaS section.",
+      "imageUrl": "https://picsum.photos/seed/rdaas-diagram/600/500",
+      "imageHint": "workflow diagram"
+    },
+    {
+      "id": "actuator-diagram",
+      "description": "Animated actuator cross-section diagram.",
+      "imageUrl": "https://picsum.photos/seed/actuator-diagram/600/500",
+      "imageHint": "actuator diagram"
+    },
+    {
+      "id": "construction-robot-diagram",
+      "description": "Robot arm animation building a wall.",
+      "imageUrl": "https://picsum.photos/seed/construction-diagram/600/500",
+      "imageHint": "robotic arm building"
+    },
+    {
+      "id": "factory-robot-diagram",
+      "description": "Factory robot animation diagram.",
+      "imageUrl": "https://picsum.photos/seed/factory-diagram/600/500",
+      "imageHint": "factory robot"
+    }
+  ]
 }
