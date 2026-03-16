@@ -241,10 +241,9 @@ export default function Home() {
                 ))}
               </ul>
               <Button
-                variant="outline"
                 asChild
                 size="lg"
-                className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary"
+                className="bg-primary-foreground text-primary hover:bg-primary-foreground/90"
               >
                 <Link href="/technologies/construction-robotics">
                   Discover more about our products
@@ -264,6 +263,7 @@ export default function Home() {
                   src={constructionSectionImage.imageUrl}
                   alt="Construction Robotics diagram"
                   aiHint={constructionSectionImage.imageHint}
+                  showContainer={false}
                 />
               )}
             </motion.div>
