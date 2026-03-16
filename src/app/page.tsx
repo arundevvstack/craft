@@ -125,7 +125,7 @@ export default function Home() {
   return (
     <div className="overflow-x-hidden">
       {/* Hero Section */}
-      <section className="relative py-20 md:py-32">
+      <section className="relative min-h-screen flex items-center">
         <div className="absolute inset-0 z-0">
           <Image
             src="https://drive.usercontent.google.com/download?id=1d89YdVtdagttBZzxjdFSqTSxehwGqGlU&export=view&authuser=0"
