@@ -116,92 +116,26 @@ export default function Home() {
               </Button>
             </motion.div>
 
-            {/* Image Collage */}
+            {/* Animated Diagram */}
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.7 }}
               viewport={{ once: true, amount: 0.3 }}
-              className="relative h-[500px] hidden lg:block"
+              className="flex justify-center"
             >
-              <motion.div
-                initial={{ y: 0 }}
-                animate={{ y: [-10, 10, -10] }}
-                transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut', delay: 0.5 }}
-                className="absolute w-[35%] h-[70%] top-[15%] left-0"
-              >
-                <Image
-                  src={PlaceHolderImages.find(p => p.id === 'rdaas-collage-side-1')?.imageUrl ?? ''}
-                  alt="Futuristic city"
-                  data-ai-hint={PlaceHolderImages.find(p => p.id === 'rdaas-collage-side-1')?.imageHint ?? ''}
-                  fill
-                  className="object-cover rounded-lg shadow-lg"
-                />
-              </motion.div>
-              <motion.div
-                initial={{ y: 0 }}
-                animate={{ y: [10, -10, 10] }}
-                transition={{ duration: 10, repeat: Infinity, ease: 'easeInOut' }}
-                className="absolute w-[60%] h-full top-0 left-[20%]"
-              >
-                <Image
-                  src={PlaceHolderImages.find(p => p.id === 'rdaas-collage-main')?.imageUrl ?? ''}
-                  alt="Man with futuristic interface"
-                  data-ai-hint={PlaceHolderImages.find(p => p.id === 'rdaas-collage-main')?.imageHint ?? ''}
-                  fill
-                  className="object-cover rounded-lg shadow-2xl"
-                />
-              </motion.div>
-              <div className="absolute w-[40%] h-full top-0 right-0 flex flex-col justify-center gap-4">
-                <motion.div
-                    initial={{ x: 50, opacity: 0 }}
-                    whileInView={{ x: 0, opacity: 1 }}
-                    transition={{ duration: 0.7, delay: 0.2 }}
-                    viewport={{ once: true }}
-                    className="relative h-[45%] w-full"
-                >
-                    <Image
-                        src={PlaceHolderImages.find(p => p.id === 'rdaas-collage-side-2')?.imageUrl ?? ''}
-                        alt="Robot working"
-                        data-ai-hint={PlaceHolderImages.find(p => p.id === 'rdaas-collage-side-2')?.imageHint ?? ''}
-                        fill
-                        className="object-cover rounded-lg shadow-lg"
-                    />
-                </motion.div>
-                <motion.div
-                    initial={{ x: 50, opacity: 0 }}
-                    whileInView={{ x: 0, opacity: 1 }}
-                    transition={{ duration: 0.7, delay: 0.4 }}
-                    viewport={{ once: true }}
-                    className="relative h-[45%] w-full"
-                >
-                    <Image
-                        src={PlaceHolderImages.find(p => p.id === 'rdaas-collage-side-3')?.imageUrl ?? ''}
-                        alt="Cute robot"
-                        data-ai-hint={PlaceHolderImages.find(p => p.id === 'rdaas-collage-side-3')?.imageHint ?? ''}
-                        fill
-                        className="object-cover rounded-lg shadow-lg"
-                    />
-                </motion.div>
-              </div>
-            </motion.div>
-             {/* Fallback for mobile */}
-            <div className="lg:hidden">
-              <Image
-                src={PlaceHolderImages.find(p => p.id === 'rdaas-collage-main')?.imageUrl ?? ''}
-                alt="R&D as a Service"
-                data-ai-hint={PlaceHolderImages.find(p => p.id === 'rdaas-collage-main')?.imageHint ?? ''}
-                width={600}
-                height={500}
-                className="rounded-lg shadow-lg"
+              <AnimatedDiagram
+                src="https://drive.usercontent.google.com/download?id=1UMP8RJsRaGAlcaVYHqQhLB1p05zKZKMI"
+                alt="RDaaS Process Diagram"
+                aiHint="process diagram"
               />
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
 
       {/* Feature Sections */}
-      <div className="flex flex-col gap-20 lg:gap-40">
+      <div className="flex flex-col gap-20 lg:gap-40 py-20 lg:py-40">
         {featureSections.map((section) => (
           <section key={section.id} className="container mx-auto px-4">
             <div
