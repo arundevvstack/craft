@@ -162,6 +162,7 @@ export default function Home() {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.7 }}
               viewport={{ once: true, amount: 0.3 }}
+              className="text-right"
             >
               <h2 className="font-headline text-3xl md:text-4xl font-bold mb-4">
                 {actuatorSection.title}
