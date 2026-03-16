@@ -1,19 +1,20 @@
 import Image from 'next/image';
-import { Wrench, Paintbrush, ArrowRight, CheckCircle2, Zap, Send, Construction } from 'lucide-react';
-import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
+import { ArrowRight, CheckCircle2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
+import { PlaceHolderImages } from '@/lib/placeholder-images';
 
-const features = [
-  { text: 'High Repeatability', icon: Wrench },
-  { text: 'High Speed', icon: Send },
-  { text: 'Zero Emission – Fully Electric', icon: Zap },
-  { text: 'Enhanced Worker Safety', icon: CheckCircle2 },
-  { text: 'Consistent Quality Finish', icon: CheckCircle2 },
-  { text: 'Reduced Project Timelines', icon: CheckCircle2 },
+const masonryFeatures = [
+  'Compact Design',
+  'Mobile construction robot- Omnidirectional',
+  'Payload versatility',
+  'High payload to weight ratio',
 ];
 
 export default function ConstructionRoboticsPage() {
+  const masonryRobotImage = PlaceHolderImages.find((img) => img.id === 'masonry-robot');
+  const paintingRobotImage = PlaceHolderImages.find((img) => img.id === 'painting-robot');
+
   return (
     <div>
       {/* Hero Section */}
@@ -23,7 +24,7 @@ export default function ConstructionRoboticsPage() {
             src="https://drive.usercontent.google.com/download?id=1chuGVBKhe_6IpAb80Dty-8PUZvOhifoJ"
             alt="Construction Robotics"
             fill
-            className="object-cover opacity-30"
+            className="object-cover"
             data-ai-hint="construction robot"
           />
           <div className="absolute inset-0 bg-black/50" />
@@ -36,70 +37,65 @@ export default function ConstructionRoboticsPage() {
         </div>
       </section>
 
-      {/* Robots Section */}
-      <section className="py-20 bg-card">
+      {/* Masonry Robot Section */}
+      <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-4xl font-bold">Our Robotic Solutions</h2>
-            <p className="text-lg text-muted-foreground mt-4">
-              Precision engineering for the modern construction site.
-            </p>
-          </div>
-          <div className="grid md:grid-cols-2 gap-12 max-w-4xl mx-auto">
-            {/* Masonry Robot */}
-            <Card className="text-center bg-background">
-              <CardHeader>
-                <div className="mx-auto bg-primary/10 text-primary p-4 rounded-full w-fit mb-4">
-                  <Construction className="h-12 w-12" />
-                </div>
-                <CardTitle className="text-3xl">Masonry Robot</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground text-lg">
-                  Automates the bricklaying process, ensuring structural integrity and speed. Builds walls with precision, reducing manual labor and material waste.
-                </p>
-              </CardContent>
-            </Card>
-            {/* Painting Robot */}
-            <Card className="text-center bg-background">
-              <CardHeader>
-                 <div className="mx-auto bg-primary/10 text-primary p-4 rounded-full w-fit mb-4">
-                  <Paintbrush className="h-12 w-12" />
-                </div>
-                <CardTitle className="text-3xl">Painting Robot</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground text-lg">
-                  Provides a flawless and even coat of paint on any surface. Capable of reaching difficult areas safely and completing jobs in a fraction of the time.
-                </p>
-              </CardContent>
-            </Card>
+          <div className="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
+            <div className="order-2 md:order-1">
+              <h2 className="text-3xl font-bold mb-4">Masonry Robot</h2>
+              <p className="text-muted-foreground text-lg mb-6">
+                Craftsmac labs deployed first of its kind masonry robot in 2020. Product is in final stages of trials. Robotics for masonry robot is developed from scratch by Craftsmac labs.
+              </p>
+              <h3 className="text-2xl font-bold mt-8 mb-4">Critical features and specifications of the robot are:</h3>
+              <ul className="space-y-3">
+                {masonryFeatures.map((feature) => (
+                  <li key={feature} className="flex items-center gap-3">
+                    <CheckCircle2 className="h-6 w-6 text-primary flex-shrink-0" />
+                    <span className="text-lg text-muted-foreground">{feature}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="order-1 md:order-2">
+              {masonryRobotImage && (
+                <Image
+                  src={masonryRobotImage.imageUrl}
+                  alt="Masonry Robot"
+                  width={600}
+                  height={400}
+                  className="rounded-lg shadow-lg"
+                  data-ai-hint={masonryRobotImage.imageHint}
+                />
+              )}
+            </div>
           </div>
         </div>
       </section>
-
-      {/* Features/Benefits Section */}
-      <section className="py-20 bg-background">
-          <div className="container mx-auto px-4">
-              <div className="text-center max-w-3xl mx-auto mb-16">
-                <h2 className="text-4xl font-bold">Advantages & Features</h2>
-                <p className="text-lg text-muted-foreground mt-4">
-                    Our construction robots are engineered to deliver superior results while optimizing for safety and speed.
-                </p>
-              </div>
-              <div className="max-w-4xl mx-auto">
-                 <ul className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {features.map((feature) => (
-                      <li key={feature.text} className="flex items-center gap-4 bg-card p-4 rounded-lg">
-                        <feature.icon className="h-8 w-8 text-primary flex-shrink-0" />
-                        <span className="text-lg font-semibold">
-                          {feature.text}
-                        </span>
-                      </li>
-                    ))}
-                 </ul>
-              </div>
+      
+      {/* Painting Robot Section */}
+      <section className="py-20 bg-card">
+        <div className="container mx-auto px-4">
+          <div className="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
+             <div>
+              {paintingRobotImage && (
+                <Image
+                  src={paintingRobotImage.imageUrl}
+                  alt="Painting Robot"
+                  width={600}
+                  height={400}
+                  className="rounded-lg shadow-lg"
+                  data-ai-hint={paintingRobotImage.imageHint}
+                />
+              )}
+            </div>
+            <div>
+              <h2 className="text-3xl font-bold mb-4">Painting Robot</h2>
+              <p className="text-muted-foreground text-lg">
+                Initial field trials of wall painting robot completed successfully. Craftsmac labs has developed robotics technologies essential for construction industries. These technologies can be used to develop any solutions for the construction industry. Research capability and solutions developed by company since 2014 can be leveraged to deliver automation and robotics solution to the construction industry.
+              </p>
+            </div>
           </div>
+        </div>
       </section>
 
       {/* CTA Section */}

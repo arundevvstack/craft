@@ -77,6 +77,18 @@
       "description": "Collage image for RDaaS section, a small cute robot.",
       "imageUrl": "https://picsum.photos/seed/rdaas-side3/400/250",
       "imageHint": "cute robot"
+    },
+    {
+      "id": "masonry-robot",
+      "description": "Image of a masonry robot in action.",
+      "imageUrl": "https://picsum.photos/seed/masonry-robot/600/400",
+      "imageHint": "masonry robot"
+    },
+    {
+      "id": "painting-robot",
+      "description": "Image of a painting robot at work.",
+      "imageUrl": "https://picsum.photos/seed/painting-robot/600/400",
+      "imageHint": "painting robot"
     }
   ]
 }
