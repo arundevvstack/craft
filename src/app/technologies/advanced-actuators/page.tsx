@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { Zap, Weight, ShieldCheck, Thermometer } from 'lucide-react';
+import { Zap, Weight, ShieldCheck, Thermometer, ArrowRight } from 'lucide-react';
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
@@ -31,26 +31,22 @@ export default function AdvancedActuatorsPage() {
   return (
     <div>
       {/* Hero Section */}
-      <section className="bg-background py-20">
-        <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="order-2 lg:order-1">
-              <h1 className="text-4xl md:text-6xl font-bold mb-4">Advanced Actuators</h1>
-              <p className="text-lg text-muted-foreground max-w-xl">
-                The heart of our robotic systems. We develop state-of-the-art, high-precision, lightweight, and rugged actuators designed and developed by in-house capital.
-              </p>
-            </div>
-            <div className="order-1 lg:order-2">
-              <Image
-                src="https://drive.usercontent.google.com/download?id=1CsqWUcBQQ4MACwFlEpwXiuCqtHZ9SCVh"
-                alt="Advanced Actuator Diagram"
-                width={600}
-                height={500}
-                className="mx-auto"
-                data-ai-hint="actuator diagram"
-              />
-            </div>
-          </div>
+      <section className="relative h-[50vh] flex items-center justify-center text-center">
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="https://drive.usercontent.google.com/download?id=1CsqWUcBQQ4MACwFlEpwXiuCqtHZ9SCVh"
+            alt="Advanced Actuators"
+            fill
+            className="object-cover opacity-30"
+            data-ai-hint="actuator diagram"
+          />
+           <div className="absolute inset-0 bg-black/50" />
+        </div>
+        <div className="relative z-10 container mx-auto px-4">
+          <h1 className="text-4xl md:text-6xl font-bold text-white">Advanced Actuators</h1>
+          <p className="mt-4 text-lg md:text-xl max-w-3xl mx-auto text-slate-300">
+            The heart of our robotic systems: state-of-the-art, high-precision, lightweight, and rugged actuators.
+          </p>
         </div>
       </section>
 
@@ -65,7 +61,7 @@ export default function AdvancedActuatorsPage() {
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {features.map((feature) => (
-              <Card key={feature.title} className="text-center">
+              <Card key={feature.title} className="text-center bg-background">
                 <CardHeader>
                   <div className="mx-auto bg-primary/10 text-primary p-4 rounded-full w-fit mb-4">
                     <feature.icon className="h-8 w-8" />
@@ -85,7 +81,7 @@ export default function AdvancedActuatorsPage() {
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-bold text-center mb-12">Technical Specifications</h2>
-          <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-8">
+          <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-8 items-center">
             <Image 
                 src="https://picsum.photos/seed/actuator-spec/600/700"
                 alt="Actuator technical drawing"
@@ -94,7 +90,7 @@ export default function AdvancedActuatorsPage() {
                 className="rounded-lg shadow-md object-cover"
                 data-ai-hint="technical drawing"
             />
-            <div className="space-y-6 text-lg p-4 bg-card rounded-lg">
+            <div className="space-y-6 text-lg p-8 bg-card rounded-lg">
                 <h3 className="text-2xl font-bold border-b pb-2">Model CSL-A1</h3>
                 <div className="flex justify-between"><span>Torque:</span> <span className="font-mono text-foreground">150 Nm</span></div>
                 <div className="flex justify-between"><span>Weight:</span> <span className="font-mono text-foreground">2.5 kg</span></div>
@@ -109,6 +105,27 @@ export default function AdvancedActuatorsPage() {
                 </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-20 bg-primary text-primary-foreground">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-4xl font-bold mb-4">
+            Integrate Precision and Power
+          </h2>
+          <p className="text-lg mb-8 max-w-2xl mx-auto">
+            Learn more about how our advanced actuators can enhance your robotic solutions.
+          </p>
+          <Button
+            size="lg"
+            asChild
+            className="bg-primary-foreground text-primary hover:bg-primary-foreground/90"
+          >
+            <Link href="/contact">
+              Contact Sales <ArrowRight className="ml-2" />
+            </Link>
+          </Button>
         </div>
       </section>
     </div>

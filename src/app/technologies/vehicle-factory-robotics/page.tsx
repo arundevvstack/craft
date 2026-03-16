@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { Factory, Warehouse, HeartPulse, Truck } from 'lucide-react';
+import { Factory, Warehouse, HeartPulse, Truck, ArrowRight } from 'lucide-react';
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
@@ -32,26 +32,22 @@ export default function FactoryRoboticsPage() {
   return (
     <div>
       {/* Hero Section */}
-      <section className="bg-background py-20">
-        <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h1 className="text-4xl md:text-6xl font-bold mb-4">Vehicle & Factory Robotics</h1>
-              <p className="text-lg text-muted-foreground max-w-xl">
-                Highly customizable solutions to streamline operations, enhance productivity, and optimize safety across various industries.
-              </p>
-            </div>
-            <div>
-              <Image
-                src="https://drive.usercontent.google.com/download?id=1OOZHKc77k7gvXSEQ2zPjeX7nvPL62tWW"
-                alt="Factory Robot Diagram"
-                width={600}
-                height={500}
-                className="mx-auto"
-                data-ai-hint="factory robot"
-              />
-            </div>
-          </div>
+      <section className="relative h-[50vh] flex items-center justify-center text-center">
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="https://drive.usercontent.google.com/download?id=1OOZHKc77k7gvXSEQ2zPjeX7nvPL62tWW"
+            alt="Factory Robotics"
+            fill
+            className="object-cover opacity-30"
+            data-ai-hint="factory robot"
+          />
+          <div className="absolute inset-0 bg-black/50" />
+        </div>
+        <div className="relative z-10 container mx-auto px-4">
+          <h1 className="text-4xl md:text-6xl font-bold text-white">Vehicle & Factory Robotics</h1>
+          <p className="mt-4 text-lg md:text-xl max-w-3xl mx-auto text-slate-300">
+            Customizable solutions to streamline operations, enhance productivity, and optimize safety.
+          </p>
         </div>
       </section>
       
@@ -66,7 +62,7 @@ export default function FactoryRoboticsPage() {
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {applications.map((app) => (
-              <Card key={app.title} className="text-center">
+              <Card key={app.title} className="text-center bg-background">
                 <CardHeader>
                   <div className="mx-auto bg-primary/10 text-primary p-4 rounded-full w-fit mb-4">
                     <app.icon className="h-8 w-8" />
@@ -83,16 +79,16 @@ export default function FactoryRoboticsPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-background">
+      <section className="py-20 bg-primary text-primary-foreground">
         <div className="container mx-auto px-4 text-center">
           <div className="max-w-3xl mx-auto">
             <h2 className="text-4xl font-bold mb-4">Let's Build Your Custom Solution</h2>
-            <p className="text-lg text-muted-foreground mb-8">
+            <p className="text-lg mb-8 max-w-2xl mx-auto">
               Whether you need to automate a single process or an entire facility, our team has the expertise to deliver.
             </p>
-            <Button size="lg" asChild>
+            <Button size="lg" asChild className="bg-primary-foreground text-primary hover:bg-primary-foreground/90">
                 <Link href="/contact">
-                    Schedule a Consultation
+                    Schedule a Consultation <ArrowRight className="ml-2" />
                 </Link>
             </Button>
           </div>

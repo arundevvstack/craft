@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { Wrench, Paintbrush, ArrowRight, CheckCircle2, Zap, Send } from 'lucide-react';
+import { Wrench, Paintbrush, ArrowRight, CheckCircle2, Zap, Send, Construction } from 'lucide-react';
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
@@ -17,65 +17,63 @@ export default function ConstructionRoboticsPage() {
   return (
     <div>
       {/* Hero Section */}
-      <section className="bg-primary text-primary-foreground py-20">
-        <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h1 className="text-4xl md:text-6xl font-thin uppercase tracking-widest mb-4">Construction Robotics</h1>
-              <p className="text-lg">
-                Revolutionizing the construction industry with automation. Our robots construct and paint internal and external walls of multi-storey buildings with unparalleled precision and efficiency.
-              </p>
-            </div>
-            <div className="flex justify-center">
-              <Image
-                src="https://drive.usercontent.google.com/download?id=1chuGVBKhe_6IpAb80Dty-8PUZvOhifoJ"
-                alt="Construction Robotics diagram"
-                width={500}
-                height={500}
-                className="mx-auto"
-                data-ai-hint="construction robot"
-              />
-            </div>
-          </div>
+      <section className="relative h-[50vh] flex items-center justify-center text-center">
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="https://drive.usercontent.google.com/download?id=1chuGVBKhe_6IpAb80Dty-8PUZvOhifoJ"
+            alt="Construction Robotics"
+            fill
+            className="object-cover opacity-30"
+            data-ai-hint="construction robot"
+          />
+          <div className="absolute inset-0 bg-black/50" />
+        </div>
+        <div className="relative z-10 container mx-auto px-4">
+          <h1 className="text-4xl md:text-6xl font-bold text-white">Construction Robotics</h1>
+          <p className="mt-4 text-lg md:text-xl max-w-3xl mx-auto text-slate-300">
+            Revolutionizing the industry with automated masonry and painting solutions.
+          </p>
         </div>
       </section>
 
       {/* Robots Section */}
       <section className="py-20 bg-card">
         <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <h2 className="text-4xl font-bold">Our Robotic Solutions</h2>
+            <p className="text-lg text-muted-foreground mt-4">
+              Precision engineering for the modern construction site.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-2 gap-12 max-w-4xl mx-auto">
             {/* Masonry Robot */}
-            <div className="text-center">
-              <Card>
-                <CardHeader>
-                  <div className="mx-auto text-primary p-4 w-fit mb-4">
-                    <Construction className="h-16 w-16" />
-                  </div>
-                  <CardTitle className="text-3xl">Masonry Robot</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground text-lg">
-                    Automates the bricklaying process, ensuring structural integrity and speed. Builds walls with precision, reducing manual labor and material waste.
-                  </p>
-                </CardContent>
-              </Card>
-            </div>
+            <Card className="text-center bg-background">
+              <CardHeader>
+                <div className="mx-auto bg-primary/10 text-primary p-4 rounded-full w-fit mb-4">
+                  <Construction className="h-12 w-12" />
+                </div>
+                <CardTitle className="text-3xl">Masonry Robot</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground text-lg">
+                  Automates the bricklaying process, ensuring structural integrity and speed. Builds walls with precision, reducing manual labor and material waste.
+                </p>
+              </CardContent>
+            </Card>
             {/* Painting Robot */}
-            <div className="text-center">
-              <Card>
-                <CardHeader>
-                   <div className="mx-auto text-primary p-4 w-fit mb-4">
-                    <Paintbrush className="h-16 w-16" />
-                  </div>
-                  <CardTitle className="text-3xl">Painting Robot</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground text-lg">
-                    Provides a flawless and even coat of paint on any surface. Capable of reaching difficult areas safely and completing jobs in a fraction of the time.
-                  </p>
-                </CardContent>
-              </Card>
-            </div>
+            <Card className="text-center bg-background">
+              <CardHeader>
+                 <div className="mx-auto bg-primary/10 text-primary p-4 rounded-full w-fit mb-4">
+                  <Paintbrush className="h-12 w-12" />
+                </div>
+                <CardTitle className="text-3xl">Painting Robot</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground text-lg">
+                  Provides a flawless and even coat of paint on any surface. Capable of reaching difficult areas safely and completing jobs in a fraction of the time.
+                </p>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
