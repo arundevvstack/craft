@@ -1,4 +1,3 @@
-
 'use client';
 import {
   ArrowRight,
@@ -30,18 +29,16 @@ const constructionSectionImage = PlaceHolderImages.find(
   (img) => img.id === 'construction-robot-diagram'
 );
 
-const featureSections = [
-  {
-    id: 'factory',
-    title: 'Vehicle & Factory Robotics',
-    text: 'Customisable for manufacturing, warehousing, logistics, and healthcare use to streamline operations, enhance productivity, and optimize safety.',
-    buttonText: 'Discover more about our products',
-    buttonLink: '/technologies/vehicle-factory-robotics',
-    image: PlaceHolderImages.find((img) => img.id === 'factory-robot-diagram'),
-    imagePosition: 'left',
-    showContainer: false,
-  },
-];
+const factoryRoboticsSection = {
+  id: 'factory',
+  title: 'Vehicle & Factory Robotics',
+  text: 'Customisable for manufacturing, warehousing, logistics, and healthcare use to streamline operations, enhance productivity, and optimize safety.',
+  buttonText: 'Discover more about our products',
+  buttonLink: '/technologies/vehicle-factory-robotics',
+  image: PlaceHolderImages.find((img) => img.id === 'factory-robot-diagram'),
+  imagePosition: 'left',
+  showContainer: false,
+};
 
 const constructionFeatures = [
   { text: 'High Repeatability', icon: Wrench },
@@ -201,7 +198,7 @@ export default function Home() {
       </section>
 
       {/* Construction Robotics Section */}
-      <section className="bg-primary text-primary-foreground py-20 lg:py-40">
+      <section className="bg-primary text-primary-foreground min-h-screen flex items-center">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center">
             <motion.div
@@ -271,74 +268,57 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Feature Sections */}
-      <div className="flex flex-col gap-20 lg:gap-40 py-20 lg:py-40">
-        {featureSections.map((section) => (
-          <section key={section.id} className="container mx-auto px-4">
-            <div
-              className={`grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center`}
+      {/* Vehicle & Factory Robotics Section */}
+      <section className="bg-background min-h-screen flex items-center">
+        <div className="container mx-auto px-4">
+          <div
+            className={`grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center`}
+          >
+            <motion.div
+              initial={{
+                opacity: 0,
+                x: 50,
+              }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.7 }}
+              viewport={{ once: true, amount: 0.3 }}
+              className={`flex justify-center`}
             >
-              <motion.div
-                initial={{
-                  opacity: 0,
-                  x: section.imagePosition === 'right' ? -50 : 50,
-                }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.7 }}
-                viewport={{ once: true, amount: 0.3 }}
-                className={`flex justify-center ${
-                  section.imagePosition === 'right' ? 'lg:order-2' : ''
-                }`}
-              >
-                {section.image && (
-                  <AnimatedDiagram
-                    src={section.image.imageUrl}
-                    alt={`${section.title} diagram`}
-                    aiHint={section.image.imageHint}
-                    showContainer={section.showContainer}
-                  />
-                )}
-              </motion.div>
-              <motion.div
-                initial={{
-                  opacity: 0,
-                  x: section.imagePosition === 'right' ? 50 : -50,
-                }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.7 }}
-                viewport={{ once: true, amount: 0.3 }}
-                className={`${
-                  section.imagePosition === 'right' ? 'lg:order-1' : ''
-                }`}
-              >
-                <h2 className="font-headline text-3xl md:text-4xl font-bold mb-4">
-                  {section.title}
-                </h2>
-                <p className="text-lg text-muted-foreground mb-6">
-                  {section.text}
-                </p>
-                {section.features && (
-                  <ul className="space-y-3 mb-8">
-                    {section.features.map((feature) => (
-                      <li key={feature} className="flex items-center gap-3">
-                        <CheckCircle2 className="h-6 w-6 text-primary" />
-                        <span className="text-lg">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                )}
-                <Button variant="outline" asChild size="lg">
-                  <Link href={section.buttonLink}>
-                    {section.buttonText}
-                    <ArrowRight className="ml-2" />
-                  </Link>
-                </Button>
-              </motion.div>
-            </div>
-          </section>
-        ))}
-      </div>
-      <div className="py-10 lg:py-20"></div>
+              {factoryRoboticsSection.image && (
+                <AnimatedDiagram
+                  src={factoryRoboticsSection.image.imageUrl}
+                  alt={`${factoryRoboticsSection.title} diagram`}
+                  aiHint={factoryRoboticsSection.image.imageHint}
+                  showContainer={factoryRoboticsSection.showContainer}
+                />
+              )}
+            </motion.div>
+            <motion.div
+              initial={{
+                opacity: 0,
+                x: -50,
+              }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.7 }}
+              viewport={{ once: true, amount: 0.3 }}
+              className={``}
+            >
+              <h2 className="font-headline text-3xl md:text-4xl font-bold mb-4">
+                {factoryRoboticsSection.title}
+              </h2>
+              <p className="text-lg text-muted-foreground mb-6">
+                {factoryRoboticsSection.text}
+              </p>
+              <Button variant="outline" asChild size="lg">
+                <Link href={factoryRoboticsSection.buttonLink}>
+                  {factoryRoboticsSection.buttonText}
+                  <ArrowRight className="ml-2" />
+                </Link>
+              </Button>
+            </motion.div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
