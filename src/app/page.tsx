@@ -89,7 +89,7 @@ export default function Home() {
       </section>
 
       {/* RDaaS Section */}
-      <section id="tech-showcase" className="py-20 lg:py-32">
+      <section id="tech-showcase" className="bg-card min-h-screen flex items-center">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             {/* Text Content */}
