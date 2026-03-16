@@ -53,6 +53,30 @@
       "description": "Factory robot animation diagram.",
       "imageUrl": "https://picsum.photos/seed/factory-diagram/600/500",
       "imageHint": "factory robot"
+    },
+    {
+      "id": "rdaas-collage-main",
+      "description": "Main collage image for RDaaS section, a person working on a laptop with a futuristic UI.",
+      "imageUrl": "https://picsum.photos/seed/rdaas-main/600/500",
+      "imageHint": "futuristic interface"
+    },
+    {
+      "id": "rdaas-collage-side-1",
+      "description": "Collage image for RDaaS section, futuristic city.",
+      "imageUrl": "https://picsum.photos/seed/rdaas-side1/300/450",
+      "imageHint": "futuristic city"
+    },
+    {
+      "id": "rdaas-collage-side-2",
+      "description": "Collage image for RDaaS section, a robot at a desk.",
+      "imageUrl": "https://picsum.photos/seed/rdaas-side2/400/250",
+      "imageHint": "robot working"
+    },
+    {
+      "id": "rdaas-collage-side-3",
+      "description": "Collage image for RDaaS section, a small cute robot.",
+      "imageUrl": "https://picsum.photos/seed/rdaas-side3/400/250",
+      "imageHint": "cute robot"
     }
   ]
 }
