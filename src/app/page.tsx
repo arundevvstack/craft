@@ -99,6 +99,7 @@ export default function Home() {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.7 }}
               viewport={{ once: true, amount: 0.3 }}
+              className="text-left"
             >
               <p className="text-sm font-semibold uppercase text-primary mb-3">
                 RDaaS
