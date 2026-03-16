@@ -7,6 +7,9 @@ import {
   Zap,
   Code,
   Rocket,
+  ClipboardCheck,
+  BadgeCheck,
+  Factory,
 } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -31,6 +34,26 @@ const processSteps = [
     title: 'Rapid Prototyping',
     description:
       'We build functional prototypes, allowing for iterative testing and refinement to ensure optimal performance.',
+  },
+  {
+    icon: ClipboardCheck,
+    title: 'Trials and Validation',
+    description: 'Rigorous testing and validation cycles to ensure the solution meets all specifications and quality standards.',
+  },
+  {
+    icon: BadgeCheck,
+    title: 'Certification',
+    description: 'We assist with the necessary certification processes to ensure your product is compliant and market-ready.',
+  },
+  {
+    icon: Factory,
+    title: 'Pilot and Series',
+    description: 'From pilot programs to full-scale series production, we support you in scaling up your operations.',
+  },
+  {
+    icon: Wrench,
+    title: 'Service and Maintenance',
+    description: 'Providing ongoing support, service, and maintenance to ensure the longevity and performance of your machines.',
   },
 ];
 
