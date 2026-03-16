@@ -6,6 +6,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { AnimatedDiagram } from '@/components/ui/animated-diagram';
+import { TextRotator } from '@/components/ui/text-rotator';
 
 const TechnologyCard = ({
   item,
@@ -144,7 +145,11 @@ export default function Home() {
             >
               <h1 className="font-headline text-4xl md:text-6xl lg:text-7xl font-bold leading-tight">
                 <span className="font-thin text-muted-foreground">STATE OF THE ART </span>
-                <span className="text-primary">AUTOMATION</span>
+                <TextRotator
+                  phrases={['ENGINEERING', 'AUTOMATION', 'INDUSTRIAL ROBOTICS']}
+                  delay={5000}
+                  className="text-primary"
+                />
               </h1>
             </motion.div>
             <motion.p
