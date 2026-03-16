@@ -1,5 +1,14 @@
+
 'use client';
-import { ArrowRight, CheckCircle2 } from 'lucide-react';
+import {
+  ArrowRight,
+  CheckCircle2,
+  Construction,
+  Paintbrush,
+  Send,
+  Wrench,
+  Zap,
+} from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import Image from 'next/image';
@@ -17,17 +26,11 @@ const actuatorSection = {
   imagePosition: 'left',
 };
 
+const constructionSectionImage = PlaceHolderImages.find(
+  (img) => img.id === 'construction-robot-diagram'
+);
+
 const featureSections = [
-  {
-    id: 'construction',
-    title: 'Construction Robotics',
-    text: 'Internal and external walls of multi-storey buildings can be constructed and painted by Craftsmac Labs Robots with its advanced robotic arm developed for the construction industry.',
-    features: ['High Repeatability', 'High Speed', 'Zero Emission – Fully Electric'],
-    buttonText: 'Discover more about our products',
-    buttonLink: '/technologies/construction-robotics',
-    image: PlaceHolderImages.find((img) => img.id === 'construction-robot-diagram'),
-    imagePosition: 'right',
-  },
   {
     id: 'factory',
     title: 'Vehicle & Factory Robotics',
@@ -37,6 +40,12 @@ const featureSections = [
     image: PlaceHolderImages.find((img) => img.id === 'factory-robot-diagram'),
     imagePosition: 'left',
   },
+];
+
+const constructionFeatures = [
+  { text: 'High Repeatability', icon: Wrench },
+  { text: 'High Speed', icon: Send },
+  { text: 'Zero Emission – Fully Electric', icon: Zap },
 ];
 
 export default function Home() {
@@ -61,7 +70,9 @@ export default function Home() {
               transition={{ duration: 0.8 }}
             >
               <h1 className="font-headline text-3xl md:text-5xl lg:text-6xl font-bold leading-tight">
-                <span className="font-thin text-muted-foreground">STATE OF THE ART </span>
+                <span className="font-thin text-muted-foreground">
+                  STATE OF THE ART{' '}
+                </span>
                 <span className="text-primary">AUTOMATION</span>
               </h1>
             </motion.div>
@@ -71,7 +82,9 @@ export default function Home() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="mt-4 text-sm md:text-base max-w-2xl text-muted-foreground"
             >
-              Transition to industry 4.0 with Craftsmac Labs RDaaS. We Research, Design and Make machines to transform human workspace at the frontline and on the floor.
+              Transition to industry 4.0 with Craftsmac Labs RDaaS. We Research,
+              Design and Make machines to transform human workspace at the
+              frontline and on the floor.
             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -90,7 +103,10 @@ export default function Home() {
       </section>
 
       {/* RDaaS Section */}
-      <section id="tech-showcase" className="bg-card min-h-screen flex items-center">
+      <section
+        id="tech-showcase"
+        className="bg-card min-h-screen flex items-center"
+      >
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             {/* Text Content */}
@@ -108,7 +124,9 @@ export default function Home() {
                 R&D as a Service
               </h2>
               <p className="text-lg text-muted-foreground mb-8">
-                Concept to prototype to production version. We provide State-of-the-Art solutions in industrial robotics and automation to transform your workspace.
+                Concept to prototype to production version. We provide
+                State-of-the-Art solutions in industrial robotics and automation
+                to transform your workspace.
               </p>
               <Button variant="outline" asChild size="lg">
                 <Link href="/rdaas">
@@ -181,6 +199,77 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Construction Robotics Section */}
+      <section className="bg-primary text-primary-foreground py-20 lg:py-40">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.7 }}
+              viewport={{ once: true, amount: 0.3 }}
+            >
+              <h2 className="font-headline text-3xl md:text-4xl font-thin uppercase tracking-widest mb-4">
+                Construction Robotics
+              </h2>
+              <p className="text-lg mb-8">
+                Internal and external walls of multi-storey buildings can be
+                constructed and painted by Craftsmac Labs Robots with its
+                advanced robotic arm developed for the construction industry.
+              </p>
+              <div className="grid grid-cols-2 gap-8 my-8">
+                <div className="flex items-center gap-4">
+                  <Construction className="h-10 w-10" />
+                  <span className="font-semibold">Masonry Robot</span>
+                </div>
+                <div className="flex items-center gap-4">
+                  <Paintbrush className="h-10 w-10" />
+                  <span className="font-semibold">Painting Robot</span>
+                </div>
+              </div>
+              <ul className="space-y-4 mb-8">
+                {constructionFeatures.map((feature) => (
+                  <li key={feature.text} className="flex items-center gap-4">
+                    <div className="bg-primary-foreground/10 border border-primary-foreground/20 rounded-full p-3">
+                      <feature.icon className="h-6 w-6 text-primary-foreground" />
+                    </div>
+                    <span className="text-lg font-semibold uppercase">
+                      {feature.text}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+              <Button
+                variant="outline"
+                asChild
+                size="lg"
+                className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary"
+              >
+                <Link href="/technologies/construction-robotics">
+                  Discover more about our products
+                  <ArrowRight className="ml-2" />
+                </Link>
+              </Button>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.7 }}
+              viewport={{ once: true, amount: 0.3 }}
+              className="flex justify-center"
+            >
+              {constructionSectionImage && (
+                <AnimatedDiagram
+                  src={constructionSectionImage.imageUrl}
+                  alt="Construction Robotics diagram"
+                  aiHint={constructionSectionImage.imageHint}
+                />
+              )}
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       {/* Feature Sections */}
       <div className="flex flex-col gap-20 lg:gap-40 py-20 lg:py-40">
         {featureSections.map((section) => (
@@ -189,7 +278,10 @@ export default function Home() {
               className={`grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center`}
             >
               <motion.div
-                initial={{ opacity: 0, x: section.imagePosition === 'right' ? -50 : 50 }}
+                initial={{
+                  opacity: 0,
+                  x: section.imagePosition === 'right' ? -50 : 50,
+                }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.7 }}
                 viewport={{ once: true, amount: 0.3 }}
@@ -206,11 +298,16 @@ export default function Home() {
                 )}
               </motion.div>
               <motion.div
-                initial={{ opacity: 0, x: section.imagePosition === 'right' ? 50 : -50 }}
+                initial={{
+                  opacity: 0,
+                  x: section.imagePosition === 'right' ? 50 : -50,
+                }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.7 }}
                 viewport={{ once: true, amount: 0.3 }}
-                className={`${section.imagePosition === 'right' ? 'lg:order-1' : ''}`}
+                className={`${
+                  section.imagePosition === 'right' ? 'lg:order-1' : ''
+                }`}
               >
                 <h2 className="font-headline text-3xl md:text-4xl font-bold mb-4">
                   {section.title}
