@@ -14,6 +14,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { AnimatedDiagram } from '@/components/ui/animated-diagram';
+import { TextRotator } from '@/components/ui/text-rotator';
 
 const actuatorSection = {
   id: 'actuators',
@@ -71,7 +72,11 @@ export default function Home() {
                 <span className="font-thin text-muted-foreground">
                   STATE OF THE ART{' '}
                 </span>
-                <span className="text-primary">AUTOMATION</span>
+                <TextRotator
+                  phrases={['ENGINEERING', 'AUTOMATION', 'INDUSTRIAL ROBOTICS']}
+                  delay={5000}
+                  className="text-primary"
+                />
               </h1>
             </motion.div>
             <motion.p
