@@ -6,7 +6,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { AnimatedDiagram } from '@/components/ui/animated-diagram';
-import { TextRotator } from '@/components/ui/text-rotator';
 
 const TechnologyCard = ({
   item,
@@ -143,20 +142,16 @@ export default function Home() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <h1 className="font-headline text-4xl md:text-6xl lg:text-7xl font-bold leading-tight">
+              <h1 className="font-headline text-3xl md:text-5xl lg:text-6xl font-bold leading-tight">
                 <span className="font-thin text-muted-foreground">STATE OF THE ART </span>
-                <TextRotator
-                  phrases={['ENGINEERING', 'AUTOMATION', 'INDUSTRIAL ROBOTICS']}
-                  delay={5000}
-                  className="text-primary"
-                />
+                <span className="text-primary">AUTOMATION</span>
               </h1>
             </motion.div>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="mt-4 text-base md:text-xl max-w-2xl text-muted-foreground"
+              className="mt-4 text-sm md:text-base max-w-2xl text-muted-foreground"
             >
               Transition to industry 4.0 with Craftsmac Labs RDaaS. We Research, Design and Make machines to transform human workspace at the frontline and on the floor.
             </motion.p>
