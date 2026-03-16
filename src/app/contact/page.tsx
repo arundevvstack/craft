@@ -1,12 +1,10 @@
 import { Mail, Phone, MapPin } from 'lucide-react';
 import { ContactForm } from '@/components/contact-form';
-import { InstagramIcon, LinkedInIcon, TwitterIcon, YouTubeIcon } from '@/components/icons';
+import { LinkedInIcon, YouTubeIcon } from '@/components/icons';
 
 const socialLinks = [
-  { name: 'LinkedIn', icon: LinkedInIcon, href: '#' },
-  { name: 'Twitter', icon: TwitterIcon, href: '#' },
-  { name: 'YouTube', icon: YouTubeIcon, href: '#' },
-  { name: 'Instagram', icon: InstagramIcon, href: '#' },
+  { name: 'LinkedIn', icon: LinkedInIcon, href: 'https://www.linkedin.com/company/craftsmaclabs' },
+  { name: 'YouTube', icon: YouTubeIcon, href: 'https://www.youtube.com/@craftsmaclabs' },
 ];
 
 

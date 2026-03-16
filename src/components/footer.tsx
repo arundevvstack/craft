@@ -1,12 +1,10 @@
 import Link from 'next/link';
 import { Logo } from './logo';
-import { InstagramIcon, LinkedInIcon, TwitterIcon, YouTubeIcon } from './icons';
+import { LinkedInIcon, YouTubeIcon } from './icons';
 
 const socialLinks = [
-  { name: 'LinkedIn', icon: LinkedInIcon, href: '#' },
-  { name: 'Twitter', icon: TwitterIcon, href: '#' },
-  { name: 'YouTube', icon: YouTubeIcon, href: '#' },
-  { name: 'Instagram', icon: InstagramIcon, href: '#' },
+  { name: 'LinkedIn', icon: LinkedInIcon, href: 'https://www.linkedin.com/company/craftsmaclabs' },
+  { name: 'YouTube', icon: YouTubeIcon, href: 'https://www.youtube.com/@craftsmaclabs' },
 ];
 
 export function Footer() {
