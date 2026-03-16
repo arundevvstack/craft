@@ -1,25 +1,56 @@
-import { ArrowRight, BrainCircuit, Bot, Factory } from 'lucide-react';
+import {
+  ArrowRight,
+  BrainCircuit,
+  Bot,
+  Cpu,
+  Wrench,
+  Zap,
+  Code,
+  Rocket,
+} from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
 const processSteps = [
-    {
-        icon: BrainCircuit,
-        title: 'Concept & Research',
-        description: 'We start by understanding your unique challenges and goals. Our team conducts in-depth research to ideate and conceptualize the most effective robotics and automation solutions.',
-    },
-    {
-        icon: Bot,
-        title: 'Design & Prototype',
-        description: 'Leveraging cutting-edge technology, we design and build functional prototypes. This iterative process allows us to refine the mechanics, electronics, and software for optimal performance.',
-    },
-    {
-        icon: Factory,
-        title: 'Production & Integration',
-        description: 'Once the prototype is perfected, we move to production. We manufacture the final product and ensure seamless integration into your existing workflow for a smooth transition.',
-    },
+  {
+    icon: BrainCircuit,
+    title: 'Concept',
+    description:
+      'We start by understanding your unique challenges and goals, laying the groundwork for innovative solutions.',
+  },
+  {
+    icon: Bot,
+    title: 'Research & Development',
+    description:
+      'Our team conducts in-depth research and development, leveraging cutting-edge technology to create effective solutions.',
+  },
+  {
+    icon: Rocket,
+    title: 'Rapid Prototyping',
+    description:
+      'We build functional prototypes, allowing for iterative testing and refinement to ensure optimal performance.',
+  },
+];
+
+const engineeringCapabilities = [
+  {
+    icon: Cpu,
+    title: 'Electronics',
+  },
+  {
+    icon: Wrench,
+    title: 'Mechanical',
+  },
+  {
+    icon: Zap,
+    title: 'Electrical',
+  },
+  {
+    icon: Code,
+    title: 'Programming',
+  },
 ];
 
 export default function RdaasPage() {
@@ -30,10 +61,22 @@ export default function RdaasPage() {
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
-              <p className="text-sm font-semibold uppercase text-primary mb-3">RDaaS</p>
-              <h1 className="text-4xl md:text-6xl font-bold mb-6">Research & Development as a Service</h1>
+              <p className="text-sm font-semibold uppercase text-primary mb-3">
+                RDaaS
+              </p>
+              <h1 className="text-4xl md:text-6xl font-bold mb-6">
+                Research & Development as a Service
+              </h1>
+              <p className="text-lg text-muted-foreground mb-4">
+                Concept to prototype to production version. We provide
+                state-of-the-art solutions in industrial robotics and automation
+                to transform your workspace.
+              </p>
               <p className="text-lg text-muted-foreground">
-                From concept to prototype to a full-scale production version, we provide state-of-the-art solutions in industrial robotics and automation to transform your workspace.
+                We can research, design and make any thing that has motion
+                and/or anything that can change the form of another thing.
+                Partner with us for new product development, automation of your
+                process and upgradation of your factory floor.
               </p>
             </div>
             <div>
@@ -50,18 +93,48 @@ export default function RdaasPage() {
         </div>
       </section>
 
-      {/* Process Section */}
+      {/* Proven Engineering Capabilities Section */}
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-4xl font-bold">Our Proven Process</h2>
+            <h2 className="text-4xl font-bold">
+              Proven Engineering Capabilities
+            </h2>
             <p className="text-lg text-muted-foreground mt-4">
-              We follow a structured and transparent process to take your ideas from a simple concept to a fully operational, production-ready machine.
+              Inter-disciplinary engineering team with proven capabilities in
+              engineering sciences.
+            </p>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
+            {engineeringCapabilities.map((capability) => (
+              <div
+                key={capability.title}
+                className="text-center flex flex-col items-center"
+              >
+                <div className="mx-auto bg-primary/10 text-primary p-4 rounded-full w-fit mb-4">
+                  <capability.icon className="h-10 w-10" />
+                </div>
+                <h3 className="text-xl font-semibold">{capability.title}</h3>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Process Section */}
+      <section className="py-20 bg-card">
+        <div className="container mx-auto px-4">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <h2 className="text-4xl font-bold">Our Process</h2>
+            <p className="text-lg text-muted-foreground mt-4">
+              We follow a structured and transparent process to take your ideas
+              from a simple concept to a fully operational, production-ready
+              machine.
             </p>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
             {processSteps.map((step) => (
-              <Card key={step.title} className="text-center">
+              <Card key={step.title} className="text-center bg-background">
                 <CardHeader>
                   <div className="mx-auto bg-primary/10 text-primary p-4 rounded-full w-fit mb-4">
                     <step.icon className="h-10 w-10" />
@@ -80,9 +153,12 @@ export default function RdaasPage() {
       {/* CTA Section */}
       <section className="py-20 bg-primary text-primary-foreground">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-4xl font-bold mb-4">Ready to Transform Your Business?</h2>
+          <h2 className="text-4xl font-bold mb-4">
+            Ready to Transform Your Business?
+          </h2>
           <p className="text-lg mb-8 max-w-2xl mx-auto">
-            Let's discuss how our RDaaS model can help you innovate and stay ahead of the competition.
+            Let's discuss how our RDaaS model can help you innovate and stay
+            ahead of the competition.
           </p>
           <Button
             size="lg"
