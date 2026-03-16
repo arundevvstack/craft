@@ -135,7 +135,6 @@ export default function Home() {
             className="object-cover"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-transparent" />
         </div>
         <div className="container mx-auto px-4">
           <div className="relative z-10 max-w-4xl text-left">
