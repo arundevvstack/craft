@@ -137,7 +137,7 @@ export default function Home() {
       </section>
 
       {/* Actuators Section */}
-      <section className="bg-card min-h-screen flex items-center">
+      <section className="bg-background min-h-screen flex items-center">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center">
             <motion.div
