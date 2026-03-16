@@ -139,7 +139,7 @@ export default function RdaasPage() {
       </section>
       
       {/* Core Competency Section */}
-      <section className="py-20 bg-card">
+      <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
@@ -148,7 +148,7 @@ export default function RdaasPage() {
                 alt="Custom engineering solutions"
                 width={600}
                 height={450}
-                className="rounded-lg shadow-lg mx-auto"
+                className="rounded-lg mx-auto"
                 data-ai-hint="engineering components collage"
               />
             </div>
