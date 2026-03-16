@@ -39,6 +39,7 @@ const featureSections = [
     buttonLink: '/technologies/vehicle-factory-robotics',
     image: PlaceHolderImages.find((img) => img.id === 'factory-robot-diagram'),
     imagePosition: 'left',
+    showContainer: false,
   },
 ];
 
@@ -294,6 +295,7 @@ export default function Home() {
                     src={section.image.imageUrl}
                     alt={`${section.title} diagram`}
                     aiHint={section.image.imageHint}
+                    showContainer={section.showContainer}
                   />
                 )}
               </motion.div>
