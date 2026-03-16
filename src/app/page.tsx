@@ -133,7 +133,8 @@ export default function Home() {
             transition={{ duration: 0.8 }}
           >
             <h1 className="font-headline text-4xl md:text-6xl lg:text-7xl font-bold leading-tight">
-              STATE OF THE ART ENGINEERING, AUTOMATION, INDUSTRIAL ROBOTICS
+              <span>STATE OF THE ART ENGINEERING,</span>{' '}
+              <span className="font-thin">AUTOMATION, INDUSTRIAL ROBOTICS</span>
             </h1>
           </motion.div>
           <motion.p
