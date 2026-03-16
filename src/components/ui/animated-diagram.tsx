@@ -1,6 +1,7 @@
 'use client';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
+import { cn } from '@/lib/utils';
 
 type AnimatedDiagramProps = {
   src: string;
@@ -8,6 +9,7 @@ type AnimatedDiagramProps = {
   aiHint: string;
   width?: number;
   height?: number;
+  showContainer?: boolean;
 };
 
 export function AnimatedDiagram({
@@ -16,6 +18,7 @@ export function AnimatedDiagram({
   aiHint,
   width = 600,
   height = 500,
+  showContainer = true,
 }: AnimatedDiagramProps) {
   return (
     <motion.div
@@ -29,7 +32,10 @@ export function AnimatedDiagram({
         repeatType: 'loop',
         ease: 'easeInOut',
       }}
-      className="relative rounded-lg overflow-hidden bg-card p-4 border border-border/50 shadow-lg"
+      className={cn(
+        showContainer &&
+          'relative rounded-lg overflow-hidden bg-card p-4 border border-border/50 shadow-lg'
+      )}
     >
       <Image
         src={src}
@@ -37,7 +43,7 @@ export function AnimatedDiagram({
         data-ai-hint={aiHint}
         width={width}
         height={height}
-        className="object-contain rounded-md"
+        className={cn('object-contain', showContainer && 'rounded-md')}
       />
     </motion.div>
   );

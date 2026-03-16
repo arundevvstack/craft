@@ -128,6 +128,7 @@ export default function Home() {
                 src="https://drive.usercontent.google.com/download?id=1UMP8RJsRaGAlcaVYHqQhLB1p05zKZKMI"
                 alt="RDaaS Process Diagram"
                 aiHint="process diagram"
+                showContainer={false}
               />
             </motion.div>
           </div>
