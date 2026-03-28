@@ -29,6 +29,13 @@ const applications = [
 ];
 
 
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Vehicle & Factory Robotics',
+  description: 'Customizable robotics solutions for manufacturing, warehousing, logistics, and healthcare to optimize productivity.',
+};
+
 export default function FactoryRoboticsPage() {
   return (
     <div>

@@ -3,6 +3,14 @@ import Image from 'next/image';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { ParallaxBackground, ParallaxText } from '@/components/parallax';
 
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'About Us',
+  description: 'Learn about the history of Craftsmac Labs, pioneers in masonry robotics and industrial automation since 2014.',
+  openGraph: { images: ['/images/about-banner.png'] },
+};
+
 export default function AboutPage() {
   const heroImage = { imageUrl: '/images/about-banner.png', imageHint: 'Construction robotics banner' };
   return (

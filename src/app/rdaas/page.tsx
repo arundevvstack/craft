@@ -77,6 +77,14 @@ const engineeringCapabilities = [
   },
 ];
 
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'RDaaS - Research & Development as a Service',
+  description: 'Concept to prototype to production version. We provide state-of-the-art RDaaS solutions in industrial robotics and automation.',
+  openGraph: { images: ['/images/rdaas-page-diagram.jpg'] },
+};
+
 export default function RdaasPage() {
   return (
     <div>

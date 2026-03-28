@@ -8,6 +8,13 @@ const socialLinks = [
 ];
 
 
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Contact Us',
+  description: 'Get in touch with Craftsmac Labs to schedule a consultation or inquire about our robotics engineering services.',
+};
+
 export default function ContactPage() {
   return (
     <div className="bg-background">

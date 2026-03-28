@@ -28,6 +28,14 @@ const features = [
   },
 ];
 
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Advanced Actuators',
+  description: 'State-of-the-art, high-precision, lightweight, and rugged actuators designed for advanced robotic systems.',
+  openGraph: { images: ['/images/actuators-banner.jpg'] },
+};
+
 export default function AdvancedActuatorsPage() {
   return (
     <div>

@@ -43,7 +43,7 @@ export function AnimatedDiagram({
         data-ai-hint={aiHint}
         width={width}
         height={height}
-        className={cn('object-contain', showContainer && 'rounded-md')}
+        className={cn('object-contain max-w-full h-auto', showContainer && 'rounded-md')}
       />
     </motion.div>
   );

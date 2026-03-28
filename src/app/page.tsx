@@ -73,8 +73,8 @@ export default function Home() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <h1 className="font-headline text-3xl md:text-5xl lg:text-6xl font-bold leading-tight">
-                <span className="font-thin text-muted-foreground">
+              <h1 className="font-headline text-2xl sm:text-3xl md:text-5xl lg:text-5xl xl:text-6xl font-bold leading-tight">
+                <span className="font-thin text-muted-foreground block sm:inline">
                   STATE OF THE ART{' '}
                 </span>
                 <TextRotator

@@ -12,6 +12,14 @@ const masonryFeatures = [
   'High payload to weight ratio',
 ];
 
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Construction Robotics',
+  description: 'Revolutionizing the industry with automated masonry and painting robotic solutions. Built rugged for construction sites.',
+  openGraph: { images: ['/images/construction-banner.png'] },
+};
+
 export default function ConstructionRoboticsPage() {
   const masonryRobotImage = {
     imageUrl: '/images/masonry-robot.jpg',

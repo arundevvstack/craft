@@ -116,8 +116,8 @@ export function Header() {
           </DropdownMenu>
         ) : (
           <Link
-            key={link.href}
-            href={link.href}
+            key={link.href || link.label}
+            href={link.href || '#'}
             className={cn(
               'relative transition-all duration-300 hover:text-primary py-1',
               "after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-primary after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left",
@@ -142,7 +142,7 @@ export function Header() {
       <div className="container mx-auto px-4">
         <div className="flex h-20 items-center justify-between">
           <Link href="/" className="inline-block">
-            <img src="/images/logo.png" alt="Craftmac Labs Logo" className="h-16 w-auto" />
+            <img src="/images/logo.png" alt="Craftmac Labs Logo" className="h-10 sm:h-12 md:h-16 w-auto" />
           </Link>
           <div className="hidden md:flex items-center gap-6">
             <NavContent />
