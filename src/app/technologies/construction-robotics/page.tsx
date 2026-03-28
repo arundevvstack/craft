@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import { ArrowRight, CheckCircle2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { ParallaxBackground, ParallaxText } from '@/components/parallax';
 import Link from 'next/link';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 
@@ -12,29 +13,35 @@ const masonryFeatures = [
 ];
 
 export default function ConstructionRoboticsPage() {
-  const masonryRobotImage = PlaceHolderImages.find((img) => img.id === 'masonry-robot');
-  const paintingRobotImage = PlaceHolderImages.find((img) => img.id === 'painting-robot');
+  const masonryRobotImage = {
+    imageUrl: '/images/masonry-robot.jpg',
+    imageHint: 'Masonry Robot on site',
+  };
+  const paintingRobotImage = {
+    imageUrl: '/images/painting-robot.jpg',
+    imageHint: 'Painting Robot close up',
+  };
 
   return (
     <div>
       {/* Hero Section */}
-      <section className="relative h-[50vh] flex items-center justify-center text-center">
-        <div className="absolute inset-0 z-0">
+      <section className="relative h-[50vh] flex items-center justify-center text-center overflow-hidden">
+        <ParallaxBackground>
           <Image
-            src="https://drive.usercontent.google.com/download?id=1chuGVBKhe_6IpAb80Dty-8PUZvOhifoJ"
+            src="/images/construction-banner.png"
             alt="Construction Robotics"
             fill
             className="object-cover"
             data-ai-hint="construction robot"
           />
           <div className="absolute inset-0 bg-black/50" />
-        </div>
-        <div className="relative z-10 container mx-auto px-4">
-          <h1 className="text-4xl md:text-6xl font-bold text-white">Construction Robotics</h1>
-          <p className="mt-4 text-lg md:text-xl max-w-3xl mx-auto text-slate-300">
+        </ParallaxBackground>
+        <ParallaxText className="relative z-10 container mx-auto px-4 pointer-events-none">
+          <h1 className="text-4xl md:text-6xl font-bold text-white drop-shadow-lg">Construction Robotics</h1>
+          <p className="mt-4 text-lg md:text-xl max-w-3xl mx-auto text-slate-300 drop-shadow-md">
             Revolutionizing the industry with automated masonry and painting solutions.
           </p>
-        </div>
+        </ParallaxText>
       </section>
 
       {/* Masonry Robot Section */}

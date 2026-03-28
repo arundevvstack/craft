@@ -1,14 +1,15 @@
 import { Target, Eye } from 'lucide-react';
 import Image from 'next/image';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
+import { ParallaxBackground, ParallaxText } from '@/components/parallax';
 
 export default function AboutPage() {
-  const heroImage = PlaceHolderImages.find((img) => img.id === 'hero-background');
+  const heroImage = { imageUrl: '/images/about-banner.png', imageHint: 'Construction robotics banner' };
   return (
     <div>
       {/* Hero Section */}
-      <section className="relative h-[50vh] flex items-center justify-center text-center">
-        <div className="absolute inset-0 z-0 bg-black/50">
+      <section className="relative h-[50vh] flex items-center justify-center text-center overflow-hidden">
+        <ParallaxBackground>
           {heroImage && (
             <Image
               src={heroImage.imageUrl}
@@ -18,13 +19,14 @@ export default function AboutPage() {
               data-ai-hint={heroImage.imageHint}
             />
           )}
-        </div>
-        <div className="relative z-10 container mx-auto px-4">
-          <h1 className="text-4xl md:text-6xl font-bold text-white">About Craftsmac Labs</h1>
-          <p className="mt-4 text-lg md:text-xl max-w-3xl mx-auto text-slate-300">
+          <div className="absolute inset-0 bg-black/50" />
+        </ParallaxBackground>
+        <ParallaxText className="relative z-10 container mx-auto px-4 pointer-events-none">
+          <h1 className="text-4xl md:text-6xl font-bold text-white drop-shadow-lg">About Craftsmac Labs</h1>
+          <p className="mt-4 text-lg md:text-xl max-w-3xl mx-auto text-slate-300 drop-shadow-md">
             Pioneering the future of automation and industrial robotics.
           </p>
-        </div>
+        </ParallaxText>
       </section>
 
       {/* About Company Section */}

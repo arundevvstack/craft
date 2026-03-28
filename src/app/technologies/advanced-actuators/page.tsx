@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import { Zap, Weight, ShieldCheck, Thermometer, ArrowRight } from 'lucide-react';
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
+import { ParallaxBackground, ParallaxText } from '@/components/parallax';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 
@@ -31,23 +32,23 @@ export default function AdvancedActuatorsPage() {
   return (
     <div>
       {/* Hero Section */}
-      <section className="relative h-[50vh] flex items-center justify-center text-center">
-        <div className="absolute inset-0 z-0">
+      <section className="relative h-[50vh] flex items-center justify-center text-center overflow-hidden">
+        <ParallaxBackground>
           <Image
-            src="https://drive.usercontent.google.com/download?id=1CsqWUcBQQ4MACwFlEpwXiuCqtHZ9SCVh"
+            src="/images/actuators-banner.jpg"
             alt="Advanced Actuators"
             fill
             className="object-cover opacity-30"
             data-ai-hint="actuator diagram"
           />
            <div className="absolute inset-0 bg-black/50" />
-        </div>
-        <div className="relative z-10 container mx-auto px-4">
-          <h1 className="text-4xl md:text-6xl font-bold text-white">Advanced Actuators</h1>
-          <p className="mt-4 text-lg md:text-xl max-w-3xl mx-auto text-slate-300">
+        </ParallaxBackground>
+        <ParallaxText className="relative z-10 container mx-auto px-4 pointer-events-none">
+          <h1 className="text-4xl md:text-6xl font-bold text-white drop-shadow-lg">Advanced Actuators</h1>
+          <p className="mt-4 text-lg md:text-xl max-w-3xl mx-auto text-slate-300 drop-shadow-md">
             The heart of our robotic systems: state-of-the-art, high-precision, lightweight, and rugged actuators.
           </p>
-        </div>
+        </ParallaxText>
       </section>
 
       {/* Features Section */}
@@ -83,7 +84,7 @@ export default function AdvancedActuatorsPage() {
           <h2 className="text-4xl font-bold text-center mb-12">Technical Specifications</h2>
           <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-8 items-center">
             <Image 
-                src="https://picsum.photos/seed/actuator-spec/600/700"
+                src="/images/tech-specs.jpg"
                 alt="Actuator technical drawing"
                 width={600}
                 height={700}

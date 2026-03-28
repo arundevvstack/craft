@@ -23,7 +23,6 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
-import { Logo } from './logo';
 
 const navLinks = [
   { href: '/', label: 'Home' },
@@ -120,9 +119,10 @@ export function Header() {
             key={link.href}
             href={link.href}
             className={cn(
-              'transition-colors hover:text-primary',
-              pathname === link.href ? 'text-primary' : 'text-foreground',
-              isMobile && 'w-full text-lg'
+              'relative transition-all duration-300 hover:text-primary py-1',
+              "after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-primary after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left",
+              pathname === link.href ? 'text-primary after:scale-x-100 after:origin-bottom-left' : 'text-foreground',
+              isMobile && 'w-full text-lg border-b border-border/50 pb-2'
             )}
             onClick={() => isMobile && setIsMobileMenuOpen(false)}
           >
@@ -141,7 +141,9 @@ export function Header() {
     >
       <div className="container mx-auto px-4">
         <div className="flex h-20 items-center justify-between">
-          <Logo />
+          <Link href="/" className="inline-block">
+            <img src="/images/logo.png" alt="Craftmac Labs Logo" className="h-16 w-auto" />
+          </Link>
           <div className="hidden md:flex items-center gap-6">
             <NavContent />
           </div>
@@ -155,7 +157,9 @@ export function Header() {
               </SheetTrigger>
               <SheetContent side="right" className="bg-background w-[80%]">
                 <div className="flex justify-between items-center p-6 border-b border-border">
-                  <Logo />
+                  <Link href="/" className="inline-block">
+                    <img src="/images/logo.png" alt="Craftmac Labs Logo" className="h-12 w-auto" />
+                  </Link>
                   <Button
                     variant="ghost"
                     size="icon"

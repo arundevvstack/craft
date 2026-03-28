@@ -15,6 +15,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { ParallaxBackground, ParallaxText } from '@/components/parallax';
 
 const processSteps = [
   {
@@ -80,34 +81,30 @@ export default function RdaasPage() {
   return (
     <div>
       {/* Hero Section */}
-      <section className="bg-card py-20">
-        <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
-              <p className="text-sm font-semibold uppercase text-primary mb-3">
-                RDaaS
-              </p>
-              <h1 className="text-4xl md:text-6xl font-bold mb-6">
-                Research & Development as a Service
-              </h1>
-              <p className="text-lg text-muted-foreground mb-4">
-                Concept to prototype to production version. We provide
-                state-of-the-art solutions in industrial robotics and automation
-                to transform your workspace.
-              </p>
-            </div>
-            <div>
-              <Image
-                src="https://drive.usercontent.google.com/download?id=1UMP8RJsRaGAlcaVYHqQhLB1p05zKZKMI"
-                alt="RDaaS Process Diagram"
-                width={600}
-                height={500}
-                className="mx-auto"
-                data-ai-hint="process diagram"
-              />
-            </div>
+      <section className="relative py-32 md:py-40 bg-background flex items-center min-h-[60vh] overflow-hidden">
+        <ParallaxBackground>
+          <img
+            src="/images/rdaas-page-diagram.jpg"
+            alt="RDaaS Process Background"
+            className="w-full h-full object-cover opacity-50"
+          />
+          <div className="absolute inset-0 bg-background/50 z-10" />
+        </ParallaxBackground>
+        <ParallaxText className="container mx-auto px-4 relative z-20 pointer-events-none">
+          <div className="max-w-3xl">
+            <p className="text-sm font-bold uppercase text-primary mb-3 drop-shadow-sm">
+              RDaaS
+            </p>
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 drop-shadow-sm">
+              Research & Development as a Service
+            </h1>
+            <p className="text-xl font-medium text-foreground mb-4 drop-shadow-sm">
+              Concept to prototype to production version. We provide
+              state-of-the-art solutions in industrial robotics and automation
+              to transform your workspace.
+            </p>
           </div>
-        </div>
+        </ParallaxText>
       </section>
 
       {/* Proven Engineering Capabilities Section */}
@@ -144,7 +141,7 @@ export default function RdaasPage() {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
               <Image
-                src="https://drive.usercontent.google.com/download?id=1d4kOYTOfdRHGw4XjdfVadtymBFkM977T"
+                src="/images/custom-engineering.jpg"
                 alt="Custom engineering solutions"
                 width={600}
                 height={450}

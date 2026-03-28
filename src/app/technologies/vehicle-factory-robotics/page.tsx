@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import { Factory, Warehouse, HeartPulse, Truck, ArrowRight } from 'lucide-react';
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
+import { ParallaxBackground, ParallaxText } from '@/components/parallax';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 
@@ -32,8 +33,8 @@ export default function FactoryRoboticsPage() {
   return (
     <div>
       {/* Hero Section */}
-      <section className="relative h-[50vh] flex items-center justify-center text-center">
-        <div className="absolute inset-0 z-0">
+      <section className="relative h-[50vh] flex items-center justify-center text-center overflow-hidden">
+        <ParallaxBackground>
           <Image
             src="https://drive.usercontent.google.com/download?id=1OOZHKc77k7gvXSEQ2zPjeX7nvPL62tWW"
             alt="Factory Robotics"
@@ -42,13 +43,13 @@ export default function FactoryRoboticsPage() {
             data-ai-hint="factory robot"
           />
           <div className="absolute inset-0 bg-black/50" />
-        </div>
-        <div className="relative z-10 container mx-auto px-4">
-          <h1 className="text-4xl md:text-6xl font-bold text-white">Vehicle & Factory Robotics</h1>
-          <p className="mt-4 text-lg md:text-xl max-w-3xl mx-auto text-slate-300">
+        </ParallaxBackground>
+        <ParallaxText className="relative z-10 container mx-auto px-4 pointer-events-none">
+          <h1 className="text-4xl md:text-6xl font-bold text-white drop-shadow-lg">Vehicle & Factory Robotics</h1>
+          <p className="mt-4 text-lg md:text-xl max-w-3xl mx-auto text-slate-300 drop-shadow-md">
             Customizable solutions to streamline operations, enhance productivity, and optimize safety.
           </p>
-        </div>
+        </ParallaxText>
       </section>
       
       {/* Applications Section */}

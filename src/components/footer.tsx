@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import { Logo } from './logo';
 import { LinkedInIcon, YouTubeIcon } from './icons';
 
 const socialLinks = [
@@ -13,7 +12,9 @@ export function Footer() {
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-muted-foreground">
           <div className="space-y-4">
-            <Logo />
+            <Link href="/" className="inline-block">
+              <img src="/images/logo.png" alt="Craftmac Labs Logo" className="h-16 w-auto" />
+            </Link>
             <p>Craftsmac Laboratories Pvt. Ltd</p>
             <p className="max-w-xs">
               IX/412 C1, Infopark Road, Kusumagiri P.O., Kakkanad, Kochi, Kerala 682030, India

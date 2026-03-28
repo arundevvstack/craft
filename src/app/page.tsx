@@ -13,6 +13,7 @@ import { PlaceHolderImages } from '@/lib/placeholder-images';
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
+import { ParallaxBackground, ParallaxText } from '@/components/parallax';
 import { AnimatedDiagram } from '@/components/ui/animated-diagram';
 import { TextRotator } from '@/components/ui/text-rotator';
 
@@ -22,13 +23,14 @@ const actuatorSection = {
   text: 'State-of-the-Art, high precision, lightweight, rugged actuators designed and developed by in-house capital.',
   buttonText: 'Discover more about our product',
   buttonLink: '/technologies/advanced-actuators',
-  image: PlaceHolderImages.find((img) => img.id === 'actuator-diagram'),
+  image: { imageUrl: '/images/advanced-actuators.gif', imageHint: 'actuators diagram' },
   imagePosition: 'left',
 };
 
-const constructionSectionImage = PlaceHolderImages.find(
-  (img) => img.id === 'construction-robot-diagram'
-);
+const constructionSectionImage = {
+  imageUrl: '/images/construction-robotics.png',
+  imageHint: 'Construction robotics machine',
+};
 
 const factoryRoboticsSection = {
   id: 'factory',
@@ -36,7 +38,10 @@ const factoryRoboticsSection = {
   text: 'Customisable for manufacturing, warehousing, logistics, and healthcare use to streamline operations, enhance productivity, and optimize safety.',
   buttonText: 'Discover more about our products',
   buttonLink: '/technologies/vehicle-factory-robotics',
-  image: PlaceHolderImages.find((img) => img.id === 'factory-robot-diagram'),
+  image: {
+    imageUrl: '/images/factory-robotics.jpg',
+    imageHint: 'Vehicle and Factory Robotics machine on site',
+  },
   imagePosition: 'left',
   showContainer: false,
 };
@@ -51,18 +56,18 @@ export default function Home() {
   return (
     <div className="overflow-x-hidden">
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center">
-        <div className="absolute inset-0 z-0">
+      <section className="relative min-h-screen flex items-center overflow-hidden">
+        <ParallaxBackground>
           <Image
-            src="https://drive.usercontent.google.com/download?id=1d89YdVtdagttBZzxjdFSqTSxehwGqGlU&export=view&authuser=0"
+            src="/images/banner.png"
             alt="Robotic arm background"
             fill
-            className="object-cover"
             priority
+            className="object-cover object-center"
           />
-        </div>
-        <div className="container mx-auto px-4">
-          <div className="relative z-10 max-w-4xl text-left">
+        </ParallaxBackground>
+        <ParallaxText className="container mx-auto px-4 relative z-10">
+          <div className="max-w-4xl text-left">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -102,13 +107,13 @@ export default function Home() {
               </Button>
             </motion.div>
           </div>
-        </div>
+        </ParallaxText>
       </section>
 
       {/* RDaaS Section */}
       <section
         id="tech-showcase"
-        className="bg-card min-h-screen flex items-center"
+        className="bg-[#f5f5f5] min-h-screen flex items-center dark:text-slate-900"
       >
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
@@ -148,7 +153,7 @@ export default function Home() {
               className="flex justify-center"
             >
               <AnimatedDiagram
-                src="https://drive.usercontent.google.com/download?id=1UMP8RJsRaGAlcaVYHqQhLB1p05zKZKMI"
+                src="/images/rdaas-diagram.png"
                 alt="RDaaS Process Diagram"
                 aiHint="process diagram"
                 showContainer={false}
