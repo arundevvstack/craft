@@ -92,7 +92,7 @@ export default function AdvancedActuatorsPage() {
           <h2 className="text-4xl font-bold text-center mb-12">Technical Specifications</h2>
           <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-8 items-center">
             <Image 
-                src="/images/tech-specs.jpg"
+                src="/images/Advanced actuator.png"
                 alt="Actuator technical drawing"
                 width={600}
                 height={700}

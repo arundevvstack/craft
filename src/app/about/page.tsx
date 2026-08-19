@@ -43,7 +43,7 @@ export default function AboutPage() {
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-4xl font-bold mb-8">Our Story</h2>
             <p className="text-lg text-muted-foreground text-justify leading-relaxed">
-            Craftsmac Labs, a deep technology Indian start-up company was founded by a group of Engineers in 2014 at Kochi, India for R&D in masonry robotics. Alpha version of the Masonry Robot started trials in October 2016. Version 2.1 released for commercial use in Aug 2020 was preceded by 2 versions in 2018 and 2019 that was upgraded after extensive tests and trials. With 6 years of R&D towards the development of the Masonry Robot, Craftsmac Labs has developed state-of-the-art construction purpose robotics technologies. With this core robotics asset, solutions for other construction tasks are in the pipeline.
+            Craftsmac Labs, a deep technology company was founded by a group of Engineers in 2014 at Kochi, India for R&D in masonry robotics. Alpha version of the Masonry Robot started trials in October 2016. Version 2.1 released for commercial use in Aug 2020 was preceded by 2 versions in 2018 and 2019 that was upgraded after extensive tests and trials. With 6 years of R&D towards the development of the Masonry Robot, Craftsmac Labs has developed state-of-the-art construction purpose robotics technologies. With this core robotics asset, solutions for other construction tasks are in the pipeline.
             </p>
           </div>
         </div>

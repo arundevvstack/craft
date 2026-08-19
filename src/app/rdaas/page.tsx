@@ -173,7 +173,7 @@ export default function RdaasPage() {
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="text-4xl font-bold">Our Process</h2>
             <p className="text-lg text-muted-foreground mt-4">
-              We follow a structured and transparent process to take your ideas
+              We follow a structured and transparent process to take ideas
               from a simple concept to a fully operational, production-ready
               machine.
             </p>

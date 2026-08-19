@@ -21,7 +21,6 @@ export default function ContactPage() {
               Let's Build the <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-blue-600">Future</span>
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
-              We’re ready to answer your questions, discuss your next big project, and explore how our robotics engineering services can help you innovate.
             </p>
           </div>
         </div>
@@ -56,7 +55,6 @@ export default function ContactPage() {
               </div>
               <h3 className="text-2xl font-bold mb-3">Call Us</h3>
               <p className="text-muted-foreground mb-6 flex-grow">
-                Speak directly with our engineering and support team.
               </p>
               <div className="flex items-center text-primary font-medium">
                 +91-9746206802
