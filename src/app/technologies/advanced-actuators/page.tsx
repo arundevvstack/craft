@@ -90,7 +90,7 @@ export default function AdvancedActuatorsPage() {
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-bold text-center mb-12">Technical Specifications</h2>
-          <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-8 items-center">
+          <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 items-center">
             <Image 
                 src="/images/Advanced actuator.png"
                 alt="Actuator technical drawing"
@@ -99,20 +99,14 @@ export default function AdvancedActuatorsPage() {
                 className="rounded-lg shadow-md object-cover"
                 data-ai-hint="technical drawing"
             />
-            <div className="space-y-6 text-lg p-8 bg-card rounded-lg">
-                <h3 className="text-2xl font-bold border-b pb-2">Model CSL-A1</h3>
-                <div className="flex justify-between"><span>Torque:</span> <span className="font-mono text-foreground">150 Nm</span></div>
-                <div className="flex justify-between"><span>Weight:</span> <span className="font-mono text-foreground">2.5 kg</span></div>
-                <div className="flex justify-between"><span>Voltage:</span> <span className="font-mono text-foreground">48V DC</span></div>
-                <div className="flex justify-between"><span>IP Rating:</span> <span className="font-mono text-foreground">IP67</span></div>
-                <div className="flex justify-between"><span>Gear Ratio:</span> <span className="font-mono text-foreground">100:1</span></div>
-                <div className="flex justify-between"><span>Communication:</span> <span className="font-mono text-foreground">CAN, EtherCAT</span></div>
-                <div className="pt-6">
-                    <Button asChild className="w-full" size="lg">
-                        <Link href="/contact">Request a Datasheet</Link>
-                    </Button>
-                </div>
-            </div>
+            <Image 
+                src="/images/spec.jpeg"
+                alt="Actuator technical specifications"
+                width={600}
+                height={700}
+                className="rounded-lg shadow-md object-cover"
+                data-ai-hint="technical specifications"
+            />
           </div>
         </div>
       </section>
