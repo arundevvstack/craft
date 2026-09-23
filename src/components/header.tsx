@@ -11,6 +11,7 @@ import {
   Construction,
   Zap,
   Factory,
+  Bot,
 } from 'lucide-react';
 
 import { cn } from '@/lib/utils';
@@ -31,6 +32,12 @@ const navLinks = [
     label: 'Technologies',
     isDropdown: true,
     dropdownItems: [
+      {
+        href: '/technologies/masonry-robot',
+        label: 'Masonry Robot',
+        description: 'Integrated applicator & humanoid block loading.',
+        icon: Bot,
+      },
       {
         href: '/technologies/construction-robotics',
         label: 'Construction Robotics',
