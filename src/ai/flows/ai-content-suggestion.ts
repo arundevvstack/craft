@@ -46,12 +46,12 @@ Please provide:
 
 Ensure your response is a JSON object matching the following structure:
 
-```json
+\`\`\`json
 {
   "metaDescription": "string",
   "headlineSuggestions": ["string", "string", "string"]
 }
-```
+\`\`\`
 `,
 });
 

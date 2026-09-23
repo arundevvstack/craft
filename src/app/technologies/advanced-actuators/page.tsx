@@ -89,22 +89,21 @@ export default function AdvancedActuatorsPage() {
       {/* Technical Specs Section */}
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center mb-12">Technical Specifications</h2>
           <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 items-center">
             <Image 
                 src="/images/Advanced actuator.png"
                 alt="Actuator technical drawing"
                 width={600}
                 height={700}
-                className="rounded-lg shadow-md object-cover"
+                className="rounded-lg shadow-md object-contain w-full h-auto"
                 data-ai-hint="technical drawing"
             />
             <Image 
-                src="/images/spec.jpeg"
+                src="/images/spec.png"
                 alt="Actuator technical specifications"
                 width={600}
                 height={700}
-                className="rounded-lg shadow-md object-cover"
+                className="rounded-lg shadow-md object-contain w-full h-auto"
                 data-ai-hint="technical specifications"
             />
           </div>
