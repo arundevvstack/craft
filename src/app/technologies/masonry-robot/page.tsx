@@ -1,6 +1,6 @@
 import Image from 'next/image';
-import { ArrowRight, Bot, CheckCircle2, Zap, ShieldCheck, Gauge, Cpu, Leaf, Smartphone } from 'lucide-react';
-import { Card, CardContent } from '@/components/ui/card';
+import { ArrowRight, Bot, Zap, ShieldCheck, Gauge, Cpu, Leaf, Smartphone } from 'lucide-react';
+import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { ParallaxBackground, ParallaxText } from '@/components/parallax';
 import Link from 'next/link';
@@ -9,67 +9,49 @@ import { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Masonry Robot | Craftmac Labs',
   description: 'Automated masonry robotics featuring Integrated Block-Mortar Applicator and Humanoid Block Loading systems.',
-  openGraph: { images: ['/images/integrated-applicator.png'] },
+  openGraph: { images: ['/images/2026.png'] },
 };
 
-const robotModels = [
+const presentMachineFeatures = [
   {
-    title: 'Integrated Block-Mortar Applicator - 2026',
-    speed: 'Construction Speed - 90 Blocks/ Hour',
-    image: '/images/integrated-applicator.png',
-    alt: 'Integrated Block-Mortar Applicator',
-    badge: 'Available 2026',
-    features: [
-      {
-        title: 'Compact',
-        description: 'Passes through standard door openings.',
-        icon: ShieldCheck,
-      },
-      {
-        title: 'Floor Mobile',
-        description: 'Construct internal and external walls on any floor level.',
-        icon: Gauge,
-      },
-      {
-        title: 'Autonomous',
-        description: 'Seamless construction of walls with door and window openings.',
-        icon: Bot,
-      },
-      {
-        title: 'Green Construction',
-        description: 'Negligible construction waste.',
-        icon: Leaf,
-      },
-    ],
+    title: 'Compact',
+    description: 'Passes through standard door openings.',
+    icon: ShieldCheck,
   },
   {
-    title: 'Humanoid Block Loading - Vision 2027',
-    speed: 'Construction Speed - 135 Blocks/ Hour',
-    image: '/images/humanoid-loading.png',
-    alt: 'Humanoid Block Loading Masonry Robot',
-    badge: 'Vision 2027',
-    features: [
-      {
-        title: 'Portable',
-        description: 'Light weight and remote controlled for floor-to-floor movements.',
-        icon: Zap,
-      },
-      {
-        title: 'Remote Supervision',
-        description: 'Digital management of onsite construction.',
-        icon: Smartphone,
-      },
-      {
-        title: 'Zero Emissions',
-        description: 'Entirely run on electricity with battery backup.',
-        icon: Leaf,
-      },
-      {
-        title: 'Industry 4.0',
-        description: 'Fully integrated digital construction workflow.',
-        icon: Cpu,
-      },
-    ],
+    title: 'Floor Mobile',
+    description: 'Construct internal and external walls on any floor level.',
+    icon: Gauge,
+  },
+  {
+    title: 'Autonomous',
+    description: 'Seamless construction of walls with door and window openings.',
+    icon: Bot,
+  },
+  {
+    title: 'Green Construction',
+    description: 'Negligible construction waste.',
+    icon: Leaf,
+  },
+  {
+    title: 'Portable',
+    description: 'Light weight and remote controlled for floor-to-floor movements.',
+    icon: Zap,
+  },
+  {
+    title: 'Remote Supervision',
+    description: 'Digital management of onsite construction.',
+    icon: Smartphone,
+  },
+  {
+    title: 'Zero Emissions',
+    description: 'Entirely run on electricity with battery backup.',
+    icon: Leaf,
+  },
+  {
+    title: 'Industry 4.0',
+    description: 'Fully integrated digital construction workflow.',
+    icon: Cpu,
   },
 ];
 
@@ -98,63 +80,104 @@ export default function MasonryRobotPage() {
         </ParallaxText>
       </section>
 
-      {/* Robot Models Showcase with Features Below Each Image */}
+      {/* Robot Showcase Section */}
       <section className="py-20 bg-background">
-        <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-2 gap-8 lg:gap-12 max-w-6xl mx-auto">
-            {robotModels.map((model) => (
-              <Card
-                key={model.title}
-                className="overflow-hidden border border-border bg-card hover:shadow-xl transition-all duration-300 flex flex-col"
-              >
-                {/* Robot Image Header */}
-                <div className="relative w-full h-[450px] bg-muted/40 flex items-center justify-center p-4">
+        <div className="container mx-auto px-4 max-w-6xl">
+          {/* 2026 Machine Spotlight */}
+          <div className="bg-card border border-border rounded-2xl overflow-hidden shadow-lg mb-16">
+            <div className="grid lg:grid-cols-12 gap-0 items-center">
+              {/* Machine Image Frame */}
+              <div className="lg:col-span-7 relative w-full h-[450px] lg:h-[540px] bg-muted/30 flex items-center justify-center p-6 border-b lg:border-b-0 lg:border-r border-border/40">
+                <Image
+                  src="/images/2026.png"
+                  alt="Masonry Robot with Integrated mortar applicator - 2026"
+                  fill
+                  className="object-contain p-4 hover:scale-105 transition-transform duration-500"
+                  priority
+                />
+                <div className="absolute top-6 right-6 bg-primary text-primary-foreground text-xs font-semibold px-3.5 py-1.5 rounded-full shadow-md">
+                  Available 2026
+                </div>
+              </div>
+
+              {/* Machine Header & Speed */}
+              <div className="lg:col-span-5 p-8 lg:p-12 flex flex-col justify-center space-y-6 text-center lg:text-left">
+                <div className="space-y-4">
+                  <h2 className="text-3xl lg:text-4xl font-bold text-primary tracking-tight leading-tight">
+                    Masonry Robot with Integrated mortar applicator - 2026
+                  </h2>
+                  <div>
+                    <p className="text-base lg:text-lg font-semibold text-foreground/90 bg-primary/10 border border-primary/20 py-2 px-5 rounded-full inline-block">
+                      Construction Speed - 90 Blocks/ Hour
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Key Features & Capabilities Grid */}
+          <div className="mb-20">
+            <div className="text-center mb-12">
+              <h3 className="text-2xl md:text-3xl font-bold tracking-tight text-foreground">
+                Key Features & Capabilities
+              </h3>
+            </div>
+
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              {presentMachineFeatures.map((feature) => (
+                <Card
+                  key={feature.title}
+                  className="border border-border bg-card hover:border-primary/50 hover:shadow-xl transition-all duration-300 p-6 flex flex-col justify-between rounded-xl"
+                >
+                  <div>
+                    <div className="h-12 w-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center mb-5">
+                      <feature.icon className="h-6 w-6" />
+                    </div>
+                    <h4 className="text-lg font-bold text-primary mb-2">
+                      {feature.title}
+                    </h4>
+                    <p className="text-sm text-muted-foreground leading-relaxed">
+                      {feature.description}
+                    </p>
+                  </div>
+                </Card>
+              ))}
+            </div>
+          </div>
+
+          {/* 2027 Vision Model - Featured Design */}
+          <div className="pt-20 border-t border-border/60">
+            <div className="bg-gradient-to-br from-card via-card to-primary/5 border border-primary/20 rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300">
+              <div className="grid lg:grid-cols-12 gap-0 items-center">
+                {/* Details Side */}
+                <div className="lg:col-span-5 p-8 lg:p-12 flex flex-col justify-center space-y-6 text-center lg:text-left order-2 lg:order-1">
+                  <div className="space-y-4">
+                    <h3 className="text-3xl lg:text-4xl font-bold text-primary tracking-tight leading-tight">
+                      Humanoid Block Loading - Vision 2027
+                    </h3>
+                    <div>
+                      <p className="text-base lg:text-lg font-semibold text-foreground/90 bg-primary/10 border border-primary/20 py-2.5 px-6 rounded-full inline-block">
+                        Construction Speed - 135 Blocks/ Hour
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Machine Image Frame */}
+                <div className="lg:col-span-7 relative w-full h-[450px] lg:h-[540px] bg-muted/30 flex items-center justify-center p-6 border-b lg:border-b-0 lg:border-l border-border/40 order-1 lg:order-2">
                   <Image
-                    src={model.image}
-                    alt={model.alt}
+                    src="/images/humanoid-loading.png"
+                    alt="Humanoid Block Loading - Vision 2027"
                     fill
                     className="object-contain p-4 hover:scale-105 transition-transform duration-500"
                   />
-                  <div className="absolute top-4 right-4 bg-primary text-primary-foreground text-xs font-semibold px-3 py-1 rounded-full shadow-md">
-                    {model.badge}
+                  <div className="absolute top-6 right-6 bg-primary text-primary-foreground text-xs font-semibold px-3.5 py-1.5 rounded-full shadow-md">
+                    Vision 2027
                   </div>
                 </div>
-
-                {/* Model Title & Speed */}
-                <div className="p-6 text-center bg-card border-b border-border/40">
-                  <h3 className="text-xl md:text-2xl font-bold text-primary mb-2">
-                    {model.title}
-                  </h3>
-                  <p className="text-base md:text-lg font-semibold text-foreground/90 bg-primary/10 py-1.5 px-4 rounded-full inline-block">
-                    {model.speed}
-                  </p>
-                </div>
-
-                {/* Features Directly Below Each Photo */}
-                <CardContent className="p-6 flex-1 bg-background/50 space-y-4">
-                  <h4 className="text-sm font-semibold uppercase tracking-wider text-muted-foreground mb-4">
-                    Key Features & Capabilities
-                  </h4>
-                  <div className="space-y-4">
-                    {model.features.map((feature) => (
-                      <div key={feature.title} className="flex items-start gap-3">
-                        <div className="p-1.5 rounded-full bg-primary/10 text-primary flex-shrink-0 mt-0.5">
-                          <CheckCircle2 className="h-5 w-5" />
-                        </div>
-                        <div>
-                          <p className="text-sm md:text-base font-semibold text-primary">
-                            {feature.title}{' '}
-                            <span className="font-normal text-muted-foreground">
-                              - {feature.description}
-                            </span>
-                          </p>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -164,7 +187,7 @@ export default function MasonryRobotPage() {
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-4xl font-bold mb-4">Transform Onsite Masonry Construction</h2>
           <p className="text-lg mb-8 max-w-2xl mx-auto">
-            Partner with Craftsmac Labs to integrate automated masonry robotics into your construction projects.
+            Partner with Craftsmac Labs to integrate masonry robotics into your construction projects.
           </p>
           <Button
             size="lg"
