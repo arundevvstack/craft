@@ -20,7 +20,7 @@ import { TextRotator } from '@/components/ui/text-rotator';
 const actuatorSection = {
   id: 'actuators',
   title: 'Advanced Actuators',
-  text: 'State-of-the-Art, high precision, lightweight, rugged actuators designed and developed by in-house capital.',
+  text: 'State-of-the-art, high-precision, high torque density and rugged actuators, designed and developed through our in-house R&D capabilities and engineering expertise.',
   buttonText: 'Discover more about our product',
   buttonLink: '/technologies/advanced-actuators',
   image: { imageUrl: '/images/advanced-actuators.gif', imageHint: 'actuators diagram' },

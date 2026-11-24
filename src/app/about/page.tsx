@@ -32,7 +32,7 @@ export default function AboutPage() {
         <ParallaxText className="relative z-10 container mx-auto px-4 pointer-events-none">
           <h1 className="text-4xl md:text-6xl font-bold text-white drop-shadow-lg">About Craftsmac Labs</h1>
           <p className="mt-4 text-lg md:text-xl max-w-3xl mx-auto text-slate-300 drop-shadow-md">
-            Pioneering the future of automation and industrial robotics.
+            Pioneering the future of automation and robotics.
           </p>
         </ParallaxText>
       </section>
@@ -42,9 +42,20 @@ export default function AboutPage() {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-4xl font-bold mb-8">Our Story</h2>
-            <p className="text-lg text-muted-foreground text-justify leading-relaxed">
-            Craftsmac Labs, a deep technology company was founded by a group of Engineers in 2014 at Kochi, India for R&D in masonry robotics. Alpha version of the Masonry Robot started trials in October 2016. Version 2.1 released for commercial use in Aug 2020 was preceded by 2 versions in 2018 and 2019 that was upgraded after extensive tests and trials. With 6 years of R&D towards the development of the Masonry Robot, Craftsmac Labs has developed state-of-the-art construction purpose robotics technologies. With this core robotics asset, solutions for other construction tasks are in the pipeline.
-            </p>
+            <div className="space-y-6 text-lg text-muted-foreground text-justify leading-relaxed">
+              <p>
+                Founded in 2014 in Kochi, India, Craftsmac Laboratories Pvt. Ltd. began as a technology venture focused on the research and development of Masonry Robot for wall construction of buildings. Driven by the challenges of developing practical robotics for construction, the company evolved into a deep-tech robotics enterprise, pioneering the development of indigenous robotics technologies, precision mechanisms and advanced actuation systems.
+              </p>
+              <p>
+                Building on its extensive in-house R&D capabilities, Craftsmac Labs became the first Indian company to indigenously develop high-precision robot joints and actuators. Among its pioneering achievements in construction robotics is the development of the world&apos;s first floor-mobile block-laying robot designed for wall construction in multi-storey buildings.
+              </p>
+              <p>
+                Today, Craftsmac Labs has developed a portfolio of state-of-the-art robotics technologies, backed by over a decade of in-house research, engineering and development. With proprietary technologies spanning robot joints, actuators, mechanisms, control systems and complete robotic platforms, the company is poised to expand into global markets for construction robots, industrial robots and high-precision robot actuators.
+              </p>
+              <p>
+                At Craftsmac Labs, we are committed to advancing robotics technology and engineering practical, high-performance robotic systems for real-world applications.
+              </p>
+            </div>
           </div>
         </div>
       </section>

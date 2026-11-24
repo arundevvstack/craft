@@ -59,7 +59,7 @@ export default function ConstructionRoboticsPage() {
             <div className="order-2 md:order-1">
               <h2 className="text-3xl font-bold mb-4">Masonry Robot</h2>
               <p className="text-muted-foreground text-lg mb-6">
-                Craftsmac labs deployed first of its kind masonry robot in 2020. Product is in final stages of trials. Robotics for masonry robot is developed from scratch by Craftsmac labs.
+                Craftsmac labs deployed first of its kind masonry robot in 2020. Robotics for masonry robot is developed from scratch by Craftsmac labs.
               </p>
               <h3 className="text-2xl font-bold mt-8 mb-4">Critical features and specifications of the robot are:</h3>
               <ul className="space-y-3">

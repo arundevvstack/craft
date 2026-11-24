@@ -14,7 +14,7 @@ const features = [
   {
     icon: Weight,
     title: 'Lightweight Design',
-    description: 'Our actuators are built with advanced materials, reducing overall system weight and increasing agility.',
+    description: 'Our high torque density actuators are built with advanced materials, reducing overall system weight and increasing agility.',
   },
   {
     icon: ShieldCheck,
